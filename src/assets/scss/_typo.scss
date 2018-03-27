@@ -1,0 +1,49 @@
+body  {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+ 
+h1 {
+	font-family: 'Amatic SC', cursive;
+	font-size: 7em;
+	color:$title-color;
+	font-weight:400;
+	text-align:center;
+	text-shadow: $h1-shadow;
+	line-height:1;
+	margin-top:.2em;
+
+	span {
+			color:$title-highcolor;
+	}
+
+	@media (max-width:767px) {
+    		font-size: 3.8em;
+    		line-height: 1; 
+	}
+}
+
+h2 {
+	text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: center;
+    color: $title-color;
+    margin-bottom: 2em;
+
+    @media (max-width:767px) {
+    	font-size: 1em; 
+    	margin-bottom:1em;
+	}
+}
+
+h3 {
+	text-transform: uppercase;
+    font-size: 1.5em;
+    text-align: center;
+    color: $subtitle-color;
+	margin: 1.5em 0 .5em;
+
+    @media (max-width:767px) {
+    	font-size: 1em; 
+    	margin-bottom:1em;
+	}
+}

@@ -1,0 +1,125 @@
+form {
+	padding:.5em;
+	background-color:$form-bg;
+}
+
+
+legend {
+	color:$form-header-color;
+	background-color:$form-header-bg;
+	border: none;
+    padding: .2em;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 400;	 
+
+	span {
+		font-family: 'Amatic SC', cursive;
+		background-color:$form-header-color;
+		color:$form-header-bg;
+		font-weight:700;
+		border-radius:5em;
+	    padding: 0 .5em;
+	    font-size: .85em;
+	    margin-left: .5em;
+	    margin-right: .5em;
+	}
+}
+
+fieldset {
+	margin-bottom: 1em;
+}
+
+
+.form-group {
+    padding-left: 1em;
+    margin-bottom: 1.5em;
+    padding-right: 1em;
+}
+
+label {
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: 400;
+    margin-bottom: .65em;
+}
+
+.form-control {
+	font-size: 1.1em;
+    padding: .5em 1em;
+    height: auto;
+}
+
+// Radiobuttons
+input[type="radio"]{
+	position: absolute;
+	right: 9999em;
+}
+
+input[type="radio"] + .label-text:before{
+	content: "\f10c";
+	font-family: "FontAwesome";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing:antialiased;
+	width: 1em;
+	display: inline-block;
+	margin-right: .6em;
+}
+
+input[type="radio"]:checked + .label-text:before{
+	content: "\f192";
+	color: #41667f;
+	animation: effect 250ms ease-in;
+}
+
+input[type="radio"]:disabled + .label-text{
+	color: #aaa;
+}
+
+input[type="radio"]:disabled + .label-text:before{
+	content: "\f111";
+	color: #ccc;
+}
+
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+
+// My date picker
+ 
+.mydp * {
+	font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.mydp .mydpicon {
+    font-family: mydatepicker !important;
+}
+
+my-date-picker.ng-valid[required], my-date-picker.ng-valid.required  {
+	border-left:none medium;
+
+	.mydp .selection   {
+		padding:.5em 1em;
+		border-left: 5px solid #42A948; /* green */
+	}
+}
+
+my-date-picker.ng-invalid:not(form)  {
+	border-left:none medium;
+
+	.mydp .selection   {
+		padding:.5em 1em;
+		border-left: 5px solid #a94442; /* red */
+	}
+
+} 

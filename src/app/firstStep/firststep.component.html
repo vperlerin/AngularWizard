@@ -1,0 +1,71 @@
+<div id="illustations" class="row"> 
+                <div class="col col-xs-4">
+                    <img src="./assets/img/speed.svg" class="img-fluid" alt="Less than 10 minutes"/>
+                    <span>Takes less than<br/>10 minutes</span>
+                </div>    
+                <div class="col col-xs-4"> 
+                    <img src="./assets/img/honest.svg" class="img-fluid" alt="Be Honest"/>
+                    <span>Answer Honestly to<br/>All Questions</span>
+                </div>
+                <div class="col col-xs-4">
+                    <img src="./assets/img/no_blank.svg" class="img-fluid" alt="Leave no blank"/>
+                    <span>Do not leave any<br/>"Neutral" Answer</span>
+                </div>
+        </div>   
+
+<h3>before you can start the survey you must answer these 3 questions:</h3>
+<form #firstStepForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane fade in active"> 
+         
+        <fieldset>
+            <legend>
+                <span>1</span>
+                What is your gender?
+            </legend>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <label for="female">
+                        <input type="radio" name="gender" id="female" value="Female" #gender="ngModel" [(ngModel)]="firststep.gender"> 
+                        <span class="label-text">Female</span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label for="male">
+                        <input type="radio" name="gender" id="male" value="Male" #gender="ngModel" [(ngModel)]="firststep.gender" > 
+                        <span class="label-text">Male</span>
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+         
+                        
+        <fieldset>
+            <legend>
+                <span>2</span>
+                What is your Full Name?
+            </legend>
+
+            <div class="form-group">
+                <input class="form-control input-md" #fullName="ngModel" required id="fullName" name="fullName" type="text" placeholder="Your Full Name" [(ngModel)]="firststep.fullName">
+            </div>
+        </fieldset>                    
+          
+        <fieldset>
+            <legend>
+                <span>3</span>
+                What is your BirthDay?
+            </legend>
+
+            <div class="form-group">
+                <my-date-picker name="dob" #dob="ngModel" [placeholder]="placeholder" [options]="myDatePickerOptions" [(ngModel)]="firststep.dob" required></my-date-picker>
+            </div>
+        </fieldset>    
+
+                    
+        <div class="form-group">
+            <button class="btn  btn-outline-rounded btn-info" [disabled]="!firstStepForm.valid" (click)="goToNext(firstStepForm)"> Next <span class="glyphicon glyphicon-caret-right"></span></button>
+        </div>
+      
+    </div>
+</form> 
