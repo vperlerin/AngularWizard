@@ -23,7 +23,7 @@ export const appRoutes: Routes = [
     { path: '',   redirectTo: '/firststep', pathMatch: 'full' },
     // 6th Route
     { path: '**', component: FirstStepComponent }
-];
+]; 
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes, { useHash: true} )],
