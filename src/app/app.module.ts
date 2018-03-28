@@ -8,6 +8,9 @@ import { NavbarComponent }    from './navbar/navbar.component';
 
 /* Feature Components */
 import { FirstStepComponent }  from './firstStep/firststep.component';
+import { SecondStepComponent }  from './secondStep/secondstep.component';
+
+
 import { WorkComponent }      from './work/work.component';
 import { AddressComponent }   from './address/address.component';
 import { ResultComponent }    from './result/result.component';
@@ -33,7 +36,7 @@ import { IMyDpOptions} from 'mydatepicker';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent, NavbarComponent, FirstStepComponent, WorkComponent, AddressComponent, ResultComponent ],
+    declarations: [ AppComponent,  FirstStepComponent, SecondStepComponent, WorkComponent, AddressComponent, ResultComponent ],
     bootstrap:    [ AppComponent ]
 })
 

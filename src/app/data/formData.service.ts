@@ -1,5 +1,5 @@
 import { Injectable }                        from '@angular/core';
-import { FormData, FirstStep, Personal, Address }       from './formData.model';
+import { FormData, FirstStep, SecondStep, Personal, Address }       from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 
@@ -8,7 +8,7 @@ export class FormDataService {
 
     private formData: FormData = new FormData();
     private isFirstStepValid: boolean = false;
-
+    private isSecondStepValid: boolean = false;
 
     private isPersonalFormValid: boolean = false;
     private isWorkFormValid: boolean = false;
@@ -17,7 +17,9 @@ export class FormDataService {
     constructor(private workflowService: WorkflowService) { 
     }
 
-
+    /*************************************************
+    * FIRST STEP 
+    *************************************************/
     getFirstStep(): FirstStep {
         var firststep: FirstStep = {
             fullName: this.formData.fullName,
@@ -35,6 +37,25 @@ export class FormDataService {
         this.workflowService.validateStep(STEPS.firststep);
     }
 
+    /*************************************************
+    * SECOND STEP 
+    *************************************************/
+    getSecondStep(): SecondStep {
+        var secondstep: SecondStep = {
+            partnerFullName: this.formData.partnerFullName,
+            partnerDob  : this.formData.partnerDob,
+            partnerGender: this.formData.partnerGender
+        };
+        return secondstep;     
+    }
+
+    setSecondStep(data: SecondStep) {
+        this.isSecondStepValid = true;
+        this.formData.partnerFullName  = data.partnerFullName;
+        this.formData.partnerDob    = data.partnerDob;
+        this.formData.partnerGender = data.partnerGender;
+        this.workflowService.validateStep(STEPS.secondstep);
+    }
 
     getPersonal(): Personal {
         // Return the Personal data
@@ -100,14 +121,14 @@ export class FormDataService {
         this.workflowService.resetSteps();
         // Return the form data after all this.* members had been reset
         this.formData.clear();
-        this.isPersonalFormValid = this.isWorkFormValid = this.isAddressFormValid = false;
+        this.isFirstStepValid = this.isSecondStepValid = false;
+        //this.isPersonalFormValid = this.isWorkFormValid = this.isAddressFormValid = false;
         return this.formData;
     }
 
     isFormValid() {
         // Return true if all forms had been validated successfully; otherwise, return false
-        return this.isPersonalFormValid &&
-                this.isWorkFormValid && 
-                this.isAddressFormValid;
+        return this.isFirstStepValid &&
+                this.isSecondStepValid  ;
     }
 }

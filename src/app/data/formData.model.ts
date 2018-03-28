@@ -1,7 +1,14 @@
 export class FormData {
+
+    // FIRST STEP
     fullName: string = '';
     gender: string = '';
     dob: string = '';
+
+    // SECOND STEP
+    partnerFullName: string = '';
+    partnerDob: string = '';
+    partnerGender: string = '';
 
     email: string = '';
     work: string = '';
@@ -11,9 +18,15 @@ export class FormData {
     zip: string = '';
 
     clear() {
+        // FIRST STEP
         this.fullName = ''; 
         this.gender = '';
         this.dob = '';
+
+        // SECOND STEP
+        this.partnerFullName = '';
+        this.partnerDob = '';
+        this.partnerGender = '';
 
 
         this.email = '';
@@ -30,6 +43,13 @@ export class FirstStep {
     gender:  string = '';
     dob: string = '';
 } 
+
+export class SecondStep {
+    partnerFullName: string = ''; 
+    partnerDob:  string = ''; 
+    partnerGender: string = '';
+} 
+
 
 export class Personal {
     fullName: string = ''; 
