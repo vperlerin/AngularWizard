@@ -3,7 +3,7 @@ import { Router }              from '@angular/router';
 
 import { FirstStep }          from '../data/formData.model';
 import { FormDataService }     from '../data/formData.service';
-import { IMyDpOptions} from 'mydatepicker';
+ 
  
  
 @Component ({
@@ -14,20 +14,10 @@ import { IMyDpOptions} from 'mydatepicker';
 export class FirstStepComponent implements OnInit {
     firststep: FirstStep;
     form: any;
-
-    private placeholder: string = 'Your Birthday';
-     
+    
     constructor(private router: Router, private formDataService: FormDataService) {
     }
- 
-    myDatePickerOptions: IMyDpOptions = {
-        inline:false,
-        dateFormat: 'yyyy-mm-dd',
-        showTodayBtn: false,
-        editableDateField: false,
-        openSelectorOnInputClick:true,
-        maxYear:2010
-    };
+  
 
 
     ngOnInit() {
@@ -47,7 +37,7 @@ export class FirstStepComponent implements OnInit {
     goToNext(form: any) {
         if (this.save(form)) {
             // Navigate to the work page
-            this.router.navigate(['/work']);
+            this.router.navigate(['/secondStep']);
         }
     }
 }

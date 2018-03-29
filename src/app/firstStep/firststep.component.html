@@ -11,7 +11,7 @@
                     <img src="./assets/img/no_blank.svg" class="img-fluid" alt="Leave no blank"/>
                     <span>Do not leave any<br/>"Neutral" Answer</span>
                 </div>
-        </div>   
+</div>   
 
 <h3>before you can start the survey you must answer these 3 questions:</h3>
 <form #firstStepForm="ngForm" class="editForm" novalidate>
@@ -63,8 +63,8 @@
         </fieldset>    
 
                     
-        <div class="form-group">
-            <button class="btn  btn-outline-rounded btn-info" [disabled]="!firstStepForm.valid" (click)="goToNext(firstStepForm)"> Next <span class="glyphicon glyphicon-caret-right"></span></button>
+        <div class="form-group text-center">
+            <button class="btn  btn-outline-rounded btn-info" [disabled]="!firstStepForm.valid" (click)="goToNext(firstStepForm)"> Next <span class="glyphicon glyphicon-chevron-right"></span></button>
         </div>
       
     </div>

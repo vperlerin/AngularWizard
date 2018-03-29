@@ -4,8 +4,7 @@ import { FormsModule }        from '@angular/forms';
 
 /* App Root */
 import { AppComponent }       from './app.component';
-import { NavbarComponent }    from './navbar/navbar.component';
-
+ 
 /* Feature Components */
 import { FirstStepComponent }  from './firstStep/firststep.component';
 import { SecondStepComponent }  from './secondStep/secondstep.component';
@@ -20,19 +19,13 @@ import { AppRoutingModule }   from './app-routing.module';
 
 /* Shared Service */
 import { FormDataService }    from './data/formData.service';
-import { WorkflowService }    from './workflow/workflow.service';
+import { WorkflowService }    from './workflow/workflow.service'; 
  
-
-/* Datepicker */
-import { MyDatePickerModule } from 'mydatepicker';
-import { IMyDpOptions} from 'mydatepicker';
-
-
+ 
 @NgModule({
     imports:      [ BrowserModule, 
                     FormsModule,
-                    AppRoutingModule,
-                    MyDatePickerModule
+                    AppRoutingModule
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],

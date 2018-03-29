@@ -9,6 +9,8 @@ import { FormDataService }            from './data/formData.service';
 export class AppComponent implements OnInit {
     title = 'The Cheating Test';
     @Input() formData;
+    // Copyright Date
+    today = Date.now();
     
     constructor(private formDataService: FormDataService) {
     }
@@ -16,5 +18,8 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.formData = this.formDataService.getFormData();
         console.log(this.title + ' loaded!');
+        window.scrollTo(0, 0);
     }
+
+
 }

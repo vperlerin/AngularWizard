@@ -14,8 +14,7 @@ import { IMyDpOptions} from 'mydatepicker';
 export class SecondStepComponent implements OnInit {
     secondstep: SecondStep;
     form: any;
-
-    private placeholder: string = 'Your Partner Birthday';
+    placeholder: string = 'Your Partner Birthday';
      
     constructor(private router: Router, private formDataService: FormDataService) {
     }

@@ -1,6 +1,20 @@
 <form #secondStepForm="ngForm" class="editForm" novalidate>
     <div class="tab-pane fade in active"> 
          
+        
+         
+                        
+        <fieldset>
+            <legend>
+                <span>5</span>
+                What is the Full Name of your partner that you are thinking is cheating? 
+            </legend>
+
+            <div class="form-group">
+                <input class="form-control input-md" #fullName="ngModel" required id="partnerFullName" name="fullName" type="text" placeholder="Your Partner Full Name" [(ngModel)]="secondstep.partnerFullName">
+            </div>
+        </fieldset>     
+
         <fieldset>
             <legend>
                 <span>4</span>
@@ -21,19 +35,7 @@
                     </label>
                 </div>
             </div>
-        </fieldset>
-         
-                        
-        <fieldset>
-            <legend>
-                <span>5</span>
-                What is your partner Full Name?
-            </legend>
-
-            <div class="form-group">
-                <input class="form-control input-md" #fullName="ngModel" required id="partnerFullName" name="fullName" type="text" placeholder="Your Parnet Full Name" [(ngModel)]="secondstep.partnerFullName">
-            </div>
-        </fieldset>                    
+        </fieldset>               
           
         <fieldset>
             <legend>
@@ -47,9 +49,9 @@
         </fieldset>    
 
                     
-        <div class="form-group">
-            <button class="btn btn-outline-rounded btn-default" onclick="return false;" (click)="goToPrevious(secondStepForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
-            <button class="btn btn-outline-rounded btn-info"  onclick="return false;" [disabled]="!secondStepForm.valid" (click)="goToNext(secondStepForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+        <div class="form-group text-center">
+            <button class="btn btn-outline-rounded btn-default" onclick="return false;" [disabled]="!secondStepForm.valid" (click)="goToPrevious(secondStepForm)"> <span class="glyphicon glyphicon-chevron-left"></span> Previous</button>
+            <button class="btn btn-outline-rounded btn-info"  onclick="return false;" [disabled]="!secondStepForm.valid" (click)="goToNext(secondStepForm)"> Next <span class="glyphicon glyphicon-chevron-right"></span></button>
 
         </div>
       

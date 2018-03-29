@@ -7,7 +7,7 @@
 @import "assets/css/loading-bars.css";
 */
 
-
+@import "assets/scss/animation"; 
 @import "assets/scss/theme";
 @import "assets/scss/fonts";
 @import "assets/scss/typo";
@@ -35,8 +35,9 @@ body {
 }
 
 #footer {
-	color:$footer-color;
-	text-align:center;
+	color:$footer-color; 
+    text-align: center;
+    margin: 2em .2em;
 }
 
 #wrap {
