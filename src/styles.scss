@@ -45,6 +45,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 @import "assets/scss/mixins"; 
 
+@import "assets/scss/loader"; 
+
 @import "assets/scss/animation"; 
 @import "assets/scss/theme";
 @import "assets/scss/fonts";

@@ -1,4 +1,3 @@
-$(function() {
-    // Remove splash screen after load
-    $('.splash').css('display', 'none');
-});
+window.onload = function () {
+	document.getElementById('splash').style.display = "none";
+}

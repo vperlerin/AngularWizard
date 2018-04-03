@@ -23,7 +23,7 @@
     "@angular/material-moment-adapter": "git+https://github.com/angular/material2-moment-adapter-builds.git",
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/router": "^5.2.0",
+    "@angular/router": "^5.2.0", 
     "core-js": "^2.4.1",
     "moment": "^2.22.0",
     "rxjs": "^5.5.6",

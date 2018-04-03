@@ -23,17 +23,18 @@ import { FormDataService }    from './data/formData.service';
 import { WorkflowService }    from './workflow/workflow.service'; 
 
 /* Material */ 
-import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatNativeDateModule, MatCardModule, MatDatepicker, MatProgressSpinnerModule } from '@angular/material'; 
+import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatNativeDateModule, MatCardModule, MatDatepicker } from '@angular/material'; 
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatRadioModule} from '@angular/material/radio'; 
-
-  
+ 
 @NgModule({
     imports:      [ BrowserModule, 
                     FormsModule,
                     AppRoutingModule,
                     HttpModule,
 				    BrowserAnimationsModule,
+
+
 				    // Material
 				    MatInputModule, 
 				    MatButtonModule,
@@ -42,8 +43,7 @@ import { MatRadioModule} from '@angular/material/radio';
 				    MatDatepickerModule, 
 				    MatNativeDateModule,
 				    MatCardModule,
-				    MatRadioModule,
-				    MatProgressSpinnerModule
+				    MatRadioModule, 
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
