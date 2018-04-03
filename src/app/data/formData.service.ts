@@ -1,5 +1,6 @@
 import { Injectable }                        from '@angular/core';
-import { FormData, FirstStep, SecondStep, Personal, Address }       from './formData.model';
+
+import { FormData, FirstStep, SecondStep, Personal, Address }   from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 

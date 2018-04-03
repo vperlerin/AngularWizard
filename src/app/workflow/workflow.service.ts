@@ -7,8 +7,6 @@ export class WorkflowService {
     private workflow = [
         { step: STEPS.firststep, valid: false },
         { step: STEPS.secondstep, valid: false },
-
-
         { step: STEPS.work, valid: false },
         { step: STEPS.address, valid: false },
         { step: STEPS.result, valid: false }
@@ -22,9 +20,8 @@ export class WorkflowService {
         var found = false;
         for (var i = 0; i < this.workflow.length && !found; i++) {
             if (this.workflow[i].step === step) {
-                console.log('FOUND',found,this.workflow[i]);
                 found = this.workflow[i].valid = true;
-            
+                console.log('FOUND',found,this.workflow[i]);
             }
         }
     }
@@ -45,11 +42,12 @@ export class WorkflowService {
         for (var i = 0; i < this.workflow.length && !found && valid; i++) {
             let item = this.workflow[i];
             if (item.step === step) {
+                console.log("1- getFirstInvalidStep",item);
                 found = true;
                 redirectToStep = '';
             }
             else {
-                console.log("getFirstInvalidStep",item);
+                console.log("2- getFirstInvalidStep",item);
                 valid = item.valid;
                 redirectToStep = item.step
             }

@@ -1,10 +1,9 @@
-body  {
-	font-family: 'Roboto', sans-serif;
+.tc {
+	text-align:center;
 }
 
-// Datepicker
-.mydp * {
-	font-family: 'Roboto', sans-serif !important;
+.nmb {
+	margin-bottom:0 !important;
 }
  
 h1 {
@@ -16,9 +15,10 @@ h1 {
 	text-shadow: $h1-shadow;
 	line-height:1;
 	margin-top:.2em;
+	margin-bottom:0;
 
 	span {
-			color:$title-highcolor;
+		color:$title-highcolor;
 	}
 
 	@media (max-width:767px) {
@@ -32,8 +32,9 @@ h2 {
     font-size: 1.5em;
     text-align: center;
     color: $title-color;
-    margin-top:0em; 
-    margin-bottom: 2em;
+    margin-top:0; 
+    margin-bottom: 1em;
+    font-weight:normal;
 
     @media (max-width:767px) {
     	font-size: 1em; 
@@ -43,10 +44,11 @@ h2 {
 
 h3 {
 	text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-align: center;
-    color: $subtitle-color;
+    color: $title-highcolor;
 	margin: 1.5em 0 .5em;
+	font-weight:normal;
 
     @media (max-width:767px) {
     	font-size: 1em; 

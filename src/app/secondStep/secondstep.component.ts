@@ -3,35 +3,27 @@ import { Router }              from '@angular/router';
 
 import { SecondStep }          from '../data/formData.model';
 import { FormDataService }     from '../data/formData.service';
-import { IMyDpOptions} from 'mydatepicker';
- 
+
+import {  MatDatepicker } from '@angular/material'; 
+import { MatDatepickerModule} from '@angular/material/datepicker'; 
  
 @Component ({
-    selector:     'mt-wizard-personal'
-    ,templateUrl: './secondstep.component.html'
+    selector:     'mt-wizard-personal',
+    templateUrl: './secondstep.component.html'
 })
 
 export class SecondStepComponent implements OnInit {
     secondstep: SecondStep;
     form: any;
-    placeholder: string = 'Your Partner Birthday';
-     
+    startDate = new Date(1990, 0, 1); // Calendar
+      
     constructor(private router: Router, private formDataService: FormDataService) {
     }
  
-    myDatePickerOptions: IMyDpOptions = {
-        inline:false,
-        dateFormat: 'yyyy-mm-dd',
-        showTodayBtn: false,
-        editableDateField: false,
-        openSelectorOnInputClick:true,
-        maxYear:2010
-    };
-
-
     ngOnInit() {
         this.secondstep = this.formDataService.getSecondStep();
         console.log('Second Step loaded!'); 
+        window.scrollTo(0,0);
     }
 
     save(form: any): boolean {
@@ -53,5 +45,11 @@ export class SecondStepComponent implements OnInit {
         if (this.save(form)) {
             this.router.navigate(['/thirdStep']);
         }
+    } 
+
+     // Open Calendar on Input Click
+    _openCalendar(picker: MatDatepicker<Date>) {
+        picker.open();  
     }
+
 }

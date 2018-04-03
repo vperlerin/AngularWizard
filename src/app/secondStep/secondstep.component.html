@@ -1,59 +1,43 @@
-<form #secondStepForm="ngForm" class="editForm" novalidate>
-    <div class="tab-pane fade in active"> 
-         
-        
-         
-                        
-        <fieldset>
-            <legend>
-                <span>5</span>
-                What is the Full Name of your partner that you are thinking is cheating? 
-            </legend>
+<mat-card>
 
-            <div class="form-group">
-                <input class="form-control input-md" #fullName="ngModel" required id="partnerFullName" name="fullName" type="text" placeholder="Your Partner Full Name" [(ngModel)]="secondstep.partnerFullName">
-            </div>
-        </fieldset>     
+  <mat-card-title>
+      Step 2
+  </mat-card-title>
 
-        <fieldset>
-            <legend>
-                <span>4</span>
-                What is your partner gender?
-            </legend>
+  <form #secondStepForm="ngForm" class="editForm" novalidate>  
 
-            <div class="form-group">
-                <div class="form-check">
-                    <label for="female">
-                        <input type="radio" name="gender" id="female" value="Female" #gender="ngModel" [(ngModel)]="secondstep.partnerGender"> 
-                        <span class="label-text">Female</span>
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label for="male">
-                        <input type="radio" name="gender" id="male" value="Male" #gender="ngModel" [(ngModel)]="secondstep.partnerGender" > 
-                        <span class="label-text">Male</span>
-                    </label>
-                </div>
-            </div>
-        </fieldset>               
-          
-        <fieldset>
-            <legend>
-                <span>6</span>
-                What is your partner BirthDay?
-            </legend>
+    <p>
+      <label for="partnerFullName" class="m">What is the Full Name of your partner?</label>
+      <mat-form-field  class="flw">
+        <input matInput id="partnerFullName" name="partnerFullName" placeholder="Enter your full name" [(ngModel)]="secondstep.partnerFullName" #partnerFullName="ngModel" required>
+      </mat-form-field>
+    </p>
 
-            <div class="form-group">
-                <my-date-picker name="partnerDob" #partnerDob="ngModel" [placeholder]="placeholder" [options]="myDatePickerOptions" [(ngModel)]="secondstep.partnerDob" required></my-date-picker>
-            </div>
-        </fieldset>    
+    <p>
+      <label for="partnerGender" class="m">What is the Gender of your partner?</label>
+      <mat-radio-group  id="partnerGender" name="partnerGender" ng-required="true" #gender="ngModel" [(ngModel)]="secondstep.partnerGender" required>
+        <mat-radio-button name="partnerGender" value="female">Female</mat-radio-button>
+        <mat-radio-button name="partnerGender" value="male">Male</mat-radio-button>
+      </mat-radio-group>
+    </p>
 
-                    
-        <div class="form-group text-center">
-            <button class="btn btn-outline-rounded btn-default" onclick="return false;" [disabled]="!secondStepForm.valid" (click)="goToPrevious(secondStepForm)"> <span class="glyphicon glyphicon-chevron-left"></span> Previous</button>
-            <button class="btn btn-outline-rounded btn-info"  onclick="return false;" [disabled]="!secondStepForm.valid" (click)="goToNext(secondStepForm)"> Next <span class="glyphicon glyphicon-chevron-right"></span></button>
+    <p> 
+      <label for="partnerDob" class="m">What is the Birthday  of your partner?</label>
+      <mat-form-field class="flw">
+          <input id="partnerDob" name="partnerDob" matInput [matDatepicker]="picker" placeholder="Enter your Birthday" (focus)="_openCalendar(picker)"  (click)="_openCalendar(picker)"  #elementToFocus #partnerDob="ngModel" [(ngModel)]="secondstep.partnerDob" [ngModelOptions]="{standalone: true}" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field> 
+    </p>
+ 
 
-        </div>
-      
-    </div>
-</form> 
+    <p class="tc nmb">
+      <button mat-raised-button color="primary"  (click)="goToPrevious(secondStepForm)"><mat-icon>chevron_left</mat-icon>Previous  </button>
+      <button mat-raised-button color="primary"  (click)="goToNext(secondStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
+    </p>
+  
+  </form>  
+
+</mat-card>
+ 
+            

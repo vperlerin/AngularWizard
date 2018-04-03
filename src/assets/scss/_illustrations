@@ -1,0 +1,36 @@
+#illustrations {
+	div {
+		float:left;
+		width:33.333%;
+		text-align:center;
+
+		display: block;
+	    margin: 0 auto;
+	    line-height: 1.2;
+	    margin: 0 auto 1.5em auto;
+	    font-size: 1.1em;
+	    text-transform: uppercase;
+	    color: $subtitle-color;
+	    text-shadow: $h1-shadow;
+
+		img {
+			max-width: 90px;
+		    height: auto;
+		    padding: 1em;
+		    display: block;
+		    margin: 0 auto;
+		}
+	} 
+
+	@include clearfix; 
+}
+
+.couple {
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    background: url(./assets/img/couple.png);
+    width: 228px;
+    height: 364px;
+    z-index: -1;
+}

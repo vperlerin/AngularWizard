@@ -2,7 +2,7 @@ import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FirstStepComponent }    from './firstStep/firststep.component';
-import { SecondStepComponent }    from './secondStep/secondstep.component';
+import { SecondStepComponent }   from './secondStep/secondstep.component';
 
 import { WorkComponent }        from './work/work.component';
 import { AddressComponent }     from './address/address.component';
@@ -18,9 +18,7 @@ export const appRoutes: Routes = [
     // 2nd Route
     { path: 'secondstep',  component: SecondStepComponent, canActivate: [WorkflowGuard] },
 
-
-
-    // 2nd Route
+     // 2nd Route
     { path: 'work',  component: WorkComponent, canActivate: [WorkflowGuard] },
     // 3rd Route
     { path: 'address',  component: AddressComponent, canActivate: [WorkflowGuard] },

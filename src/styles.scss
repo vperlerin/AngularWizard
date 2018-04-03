@@ -1,44 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css");
-/*@import "assets/css/riliwan-rabo.css";
-@import "assets/css/style.css";
-@import "assets/css/form.css";
-@import "assets/css/loading-bars.css";
-*/
+@import '~@angular/material/theming';
+@import url('//fonts.googleapis.com/icon?family=Material+Icons');
+
+$mat-thecheatingTest: (
+  50: #e3f2fd,
+  100: #bbdefb,
+  200: #90caf9,
+  300: #64b5f6,
+  400: #42a5f5,
+  500: #44a7da,
+  600: #1e88e5,
+  700: #1976d2,
+  800: #1565c0,
+  900: #0d47a1,
+  A100: #82b1ff,
+  A200: #448aff,
+  A400: #2979ff,
+  A700: #2962ff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$primary:  mat-palette($mat-thecheatingTest, 500);
+$accent:  mat-palette($mat-blue, 500, A200, A400);
+$warn:    mat-palette($mat-red, 500);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+@include mat-core();
+
+@import "assets/scss/mixins"; 
 
 @import "assets/scss/animation"; 
 @import "assets/scss/theme";
 @import "assets/scss/fonts";
 @import "assets/scss/typo";
 @import "assets/scss/form"; 
-@import "assets/scss/buttons"; 
+@import "assets/scss/buttons";  
+@import "assets/scss/illustrations"; 
+ 
+html,body {
+	margin:0;
+	padding:0;
+} 
 
 body {
-	background:$bg;
+    font-family: $mat-font-family;
+    font-weight: normal;
+    background:$bg;
 	width:100%;
-	position:relative;
-
-	.couple {
-		position:absolute;
-		right:5%;
-		top:2%;
-		background:url(./assets/img/couple.png);
-		width:228px;
-		height:364px;
-		z-index: -1;
-
-		@media (max-width:952px) {
-			display:none;
-		}
-	}
+	position:relative; 
 }
-
-#footer {
-	color:$footer-color; 
-    text-align: center;
-    margin: 2em .2em;
-}
+ 
 
 #wrap {
 	max-width:870px;
@@ -47,43 +74,11 @@ body {
 	@media (max-width:767px) {
 		padding: 0 1em;
 	}
-}
-
-
-// Illustations
-#illustations {
-	.col {
-		text-align:center;
-
-		span {
-			display:block;
-			margin:0 auto; 
-		    line-height: 1.2;
-		    margin: .5em auto;
-		    font-size: 1.1em;
-		    text-transform: uppercase; 
-		    color:$subtitle-color;
-		    text-shadow:0 2px 2px rgba(0,0,0,.3);
-
-		    @media (max-width:767px) {
-		    	font-size:.75em;
-		    }
-		}
-
-		@media (max-width:767px) {
-			padding-right: 5px;
-    		padding-left: 5px;
-    	}
-	}
-
-	img {
-		max-width: 130px;
-		-webkit-filter: drop-shadow(0 2px 1px rgba(0,0,0,.3));
-		filter: drop-shadow( 0 2px 1px rgba(0,0,0,.3) );
-
-		@media (max-width:767px) {
-			max-width: 70px;
-		}
-	}
-}
+} 
  
+
+#footer {
+    color: $footer-color;
+    text-align: center;
+    margin: 2em .2em;
+}
