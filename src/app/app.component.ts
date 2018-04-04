@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
         console.log(this.title + ' loaded!');
         window.scrollTo(0, 0);
     }
-
+    
+    
 
 }

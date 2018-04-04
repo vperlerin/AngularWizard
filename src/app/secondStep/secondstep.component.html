@@ -6,34 +6,40 @@
 
   <form #secondStepForm="ngForm" class="editForm" novalidate>  
 
-    <p>
+    <div class="fc"> 
       <label for="partnerFullName" class="m">What is the Full Name of your partner?</label>
-      <mat-form-field  class="flw">
-        <input matInput id="partnerFullName" name="partnerFullName" placeholder="Enter your full name" [(ngModel)]="secondstep.partnerFullName" #partnerFullName="ngModel" required>
-      </mat-form-field>
-    </p>
+      <div class="fcc">
+          <mat-form-field  class="flw">
+              <input matInput id="partnerFullName" name="partnerFullName" placeholder="Enter your full name" [(ngModel)]="secondstep.partnerFullName" #partnerFullName="ngModel" required>
+          </mat-form-field>
+      </div>
+    </div>
 
-    <p>
+    <div class="fc"> 
       <label for="partnerGender" class="m">What is the Gender of your partner?</label>
-      <mat-radio-group  id="partnerGender" name="partnerGender" ng-required="true" #partnerGender="ngModel" [(ngModel)]="secondstep.partnerGender" required>
-        <mat-radio-button name="partnerGender" value="female">Female</mat-radio-button>
-        <mat-radio-button name="partnerGender" value="male">Male</mat-radio-button>
-      </mat-radio-group>
-    </p>
+      <div class="fcc">
+          <mat-radio-group  id="partnerGender" name="partnerGender" ng-required="true" #partnerGender="ngModel" [(ngModel)]="secondstep.partnerGender" required>
+            <mat-radio-button name="partnerGender" value="female">Female</mat-radio-button>
+            <mat-radio-button name="partnerGender" value="male">Male</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
 
-    <p> 
+    <div class="fc"> 
       <label for="partnerDob" class="m">What is the Birthday  of your partner?</label>
-      <mat-form-field class="flw">
-          <input id="partnerDob" name="partnerDob" matInput [matDatepicker]="picker" placeholder="Enter your Birthday" (focus)="_openCalendar(picker)"  (click)="_openCalendar(picker)"  #elementToFocus #partnerDob="ngModel" [(ngModel)]="secondstep.partnerDob" [ngModelOptions]="{standalone: true}" required>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
-      </mat-form-field> 
-    </p>
+      <div class="fcc">
+          <mat-form-field class="flw">
+              <input id="partnerDob" name="partnerDob" matInput [matDatepicker]="picker" placeholder="Enter your Birthday" (focus)="_openCalendar(picker)"  (click)="_openCalendar(picker)"  #elementToFocus #partnerDob="ngModel" [(ngModel)]="secondstep.partnerDob" [ngModelOptions]="{standalone: true}" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
+          </mat-form-field> 
+      </div>    
+    </div>
  
 
     <p class="tc nmb">
-      <button mat-raised-button color="primary"  (click)="goToPrevious(secondStepForm)"><mat-icon>chevron_left</mat-icon>Previous  </button>
-      <button mat-raised-button color="primary"  (click)="goToNext(secondStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
+      <button mat-raised-button color="primary" [disabled]="!secondStepForm.valid" (click)="goToPrevious(secondStepForm)"><mat-icon>chevron_left</mat-icon>Previous  </button>
+      <button mat-raised-button color="primary"  [disabled]="!secondStepForm.valid" (click)="goToNext(secondStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
     </p>
   
   </form>  

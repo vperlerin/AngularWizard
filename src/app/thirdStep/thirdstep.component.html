@@ -6,43 +6,49 @@
 
   <form #thirdStepForm="ngForm" class="editForm" novalidate>  
 
-    <p>
+    <div class="fc">
       <label for="appearance" class="m">Have you noticed changes to your partners appearance? (more time concerned with it, gym membership etc)</label>
+      <div class="fcc">
       <mat-radio-group  id="appearance" name="appearance" ng-required="true" #appearance="ngModel" [(ngModel)]="thirdstep.appearance" required>
         <mat-radio-button name="appearance" value="yes">Yes</mat-radio-button>
         <mat-radio-button name="appearance" value="no">No</mat-radio-button>
       </mat-radio-group>
-    </p>
+      </div>
+    </div>
  
-    <p>
+    <div class="fc">
       <label for="distant" class="m">Is your partner acting more Distant?</label>
+      <div class="fcc">
       <mat-radio-group  id="distant" name="distant" ng-required="true" #distant="ngModel" [(ngModel)]="thirdstep.distant" required>
         <mat-radio-button name="distant" value="yes">Yes</mat-radio-button>
         <mat-radio-button name="distant" value="no">No</mat-radio-button>
       </mat-radio-group>
-    </p>
+      </div>
+    </div>
 
-    <p>
+    <div class="fc">
       <label for="accuse" class="m">Does your partner accuse you of cheating?</label>
+      <div class="fcc">
       <mat-radio-group  id="accuse" name="accuse" ng-required="true" #accuse="ngModel" [(ngModel)]="thirdstep.accuse" required>
         <mat-radio-button name="accuse" value="yes">Yes</mat-radio-button>
         <mat-radio-button name="accuse" value="no">No</mat-radio-button>
       </mat-radio-group>
-    </p>
+      </div>
+    </div>
 
-    <p>
+    <div class="fc">
       <label for="fight" class="m">Does your partner pick fights with you more frequently?</label>
+      <div class="fcc">
       <mat-radio-group  id="fight" name="fight" ng-required="true" #fight="ngModel" [(ngModel)]="thirdstep.fight" required>
         <mat-radio-button name="fight" value="yes">Yes</mat-radio-button>
         <mat-radio-button name="fight" value="no">No</mat-radio-button>
       </mat-radio-group>
-    </p>
-
-    
+      </div>
+    </div>
 
     <p class="tc nmb">
-      <button mat-raised-button type="button" color="primary" (click)="goToPrevious(thirdStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
-      <button mat-raised-button type="button" color="primary" (click)="goToNext(thirdStepForm)">Next  <mat-icon>chevron_right</mat-icon></button>
+      <button mat-raised-button type="button" color="primary" [disabled]="!thirdStepForm.valid" (click)="goToPrevious(thirdStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
+      <button mat-raised-button type="button" color="primary" [disabled]="!thirdStepForm.valid" (click)="goToNext(thirdStepForm)">Next  <mat-icon>chevron_right</mat-icon></button>
     </p>
   
   </form>  

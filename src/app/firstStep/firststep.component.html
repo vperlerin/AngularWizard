@@ -22,33 +22,38 @@
 
   <form #firstStepForm="ngForm" class="editForm" novalidate>  
 
-    <p>
+    <div class="fc">
       <label for="fullName" class="m">What is your Full Name?</label>
-      <mat-form-field  class="flw">
-        <input matInput id="fullName" name="fullName" placeholder="Enter your full name" [(ngModel)]="firststep.fullName" #fullName="ngModel" required>
-      </mat-form-field>
-    </p>
+      <div class="fcc">
+        <mat-form-field  class="flw">
+          <input matInput id="fullName" name="fullName" placeholder="Enter your full name" [(ngModel)]="firststep.fullName" #fullName="ngModel" required>
+        </mat-form-field>
+      </div>
+    </div>
 
-    <p>
+    <div class="fc">
       <label for="gender" class="m">What is your Gender?</label>
-      <mat-radio-group  id="gender" name="gender" ng-required="true" #gender="ngModel" [(ngModel)]="firststep.gender" required>
-        <mat-radio-button name="gender" value="female">Female</mat-radio-button>
-        <mat-radio-button name="gender" value="male">Male</mat-radio-button>
-      </mat-radio-group>
-    </p>
+      <div class="fcc">
+        <mat-radio-group  id="gender" name="gender" ng-required="true" #gender="ngModel" [(ngModel)]="firststep.gender" required>
+          <mat-radio-button name="gender" value="female">Female</mat-radio-button>
+          <mat-radio-button name="gender" value="male">Male</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
 
-    <p> 
+    <div class="fc"> 
       <label for="dob" class="m">What is your Birthday?</label>
-      <mat-form-field class="flw">
-          <input id="dob" name="dob" matInput [matDatepicker]="picker" placeholder="Enter your Birthday" (focus)="_openCalendar(picker)"  (click)="_openCalendar(picker)"  #elementToFocus #dob="ngModel" [(ngModel)]="firststep.dob" [ngModelOptions]="{standalone: true}" required>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
-      </mat-form-field> 
-    </p>
- 
- 
+      <div class="fcc">
+        <mat-form-field class="flw">
+            <input id="dob" name="dob" matInput [matDatepicker]="picker" placeholder="Enter your Birthday" (focus)="_openCalendar(picker)"  (click)="_openCalendar(picker)"  #elementToFocus #dob="ngModel" [(ngModel)]="firststep.dob" [ngModelOptions]="{standalone: true}" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field> 
+      </div>  
+    </div>
+  
     <p class="tc nmb">
-        <button mat-raised-button color="primary"  (click)="goToNext(firstStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
+        <button mat-raised-button color="primary" [disabled]="!firstStepForm.valid" (click)="goToNext(firstStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
     </p>
   
   </form>  

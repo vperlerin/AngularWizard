@@ -1,0 +1,59 @@
+<mat-card>
+
+  <mat-card-title>
+      Step 6
+  </mat-card-title>
+
+  <form #sixthStepForm="ngForm" class="editForm" novalidate>  
+
+    <div class="fc">
+      <label for="jaleaous" class="m">Is your partner acting more jealous than usual?</label>
+      <div class="fcc">
+      <mat-radio-group  id="jaleaous" name="jaleaous" ng-required="true" #jaleaous="ngModel" [(ngModel)]="sixthstep.jaleaous" required>
+        <mat-radio-button name="jealous" value="yes">Yes</mat-radio-button>
+        <mat-radio-button name="jealous" value="no">No</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+ 
+    <div class="fc">
+      <label for="routine" class="m">Has your partner's Daily routine changed at all? (any excuse to get out of the house?)</label>
+      <div class="fcc">
+      <mat-radio-group  id="routine" name="routine" ng-required="true" #routine="ngModel" [(ngModel)]="sixthstep.routine" required>
+        <mat-radio-button name="routine" value="yes">Yes</mat-radio-button> 
+        <mat-radio-button name="routine" value="no">No</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+ 
+    <div class="fc lg-rad">
+      <label for="goout" class="m">Does your partner still want to go out in public with you? (possilibty of being exposed or caught)</label>
+      <div class="fcc">
+      <mat-radio-group   id="goout" name="goout" ng-required="true" #goout="ngModel" [(ngModel)]="sixthstep.goout" required>
+        <mat-radio-button name="goout" value="yes">Yes, we go out all the time</mat-radio-button>
+        <mat-radio-button name="goout" value="no">We used to go out all the time but lately we don't at all</mat-radio-button> 
+      </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc lg-rad">
+      <label for="subject" class="m">You have brought up the subject of cheating or infidelity with your partner and she/he...</label>
+      <div class="fcc">
+      <mat-radio-group  id="subject" name="subject" ng-required="true" #subject="ngModel" [(ngModel)]="sixthstep.subject" required>
+        <mat-radio-button name="subject" value="yes">seemed highly defensive or bothered about the subject.</mat-radio-button>
+        <mat-radio-button name="subject" value="no">did not seem phased at all.</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+ 
+
+    <p class="tc nmb">
+      <button mat-raised-button type="button" color="primary" [disabled]="!sixthStepForm.valid" (click)="goToPrevious(sixthStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
+      <button mat-raised-button type="button" color="primary" [disabled]="!sixthStepForm.valid" (click)="goToNext(sixthStepForm)">Next  <mat-icon>chevron_right</mat-icon></button>
+    </p>
+  
+  </form>  
+
+</mat-card>
+ 
+            

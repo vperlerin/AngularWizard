@@ -21,6 +21,20 @@ mat-radio-button {
     padding-right:1em;
 }
 
+.fc {
+    margin:1em 0;
+}
+
+.fcc {
+    margin:0 1em;
+
+    @media(max-width:599px) {
+            margin: 0 .3em;
+    }
+}
+
+
+
 
 // Card title
 .mat-card-title {
@@ -34,6 +48,22 @@ mat-radio-button {
         font-size: 1.35em;
         text-align: center;
     }
- 
 }
- 
+
+// Radio with long answers
+.lg-rad {
+    .mat-radio-button {
+        display: block;
+        margin-bottom: .8em;
+    }
+
+    .mat-radio-label {
+        white-space: normal;
+        vertical-align: top;
+    }
+
+    .mat-radio-container {
+        align-self: flex-start;
+        margin-top: .15em;
+    }
+}

@@ -1,0 +1,60 @@
+<mat-card>
+
+  <mat-card-title>
+      Step 5
+  </mat-card-title>
+
+  <form #fithStepForm="ngForm" class="editForm" novalidate>  
+
+    <div class="fc">
+      <label for="mood" class="m">Does your partner have unpredictable mood swings?</label>
+      <div class="fcc">
+      <mat-radio-group  id="mood" name="mood" ng-required="true" #mood="ngModel" [(ngModel)]="fithstep.mood" required>
+        <mat-radio-button name="mood" value="yes">Yes</mat-radio-button>
+        <mat-radio-button name="mood" value="no">No</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+ 
+    <div class="fc lg-rad">
+      <label for="lies" class="m">Have you caught your partner in any sort of lies recently? </label>
+      <div class="fcc">
+      <mat-radio-group  id="lies" name="lies" ng-required="true" #lies="ngModel" [(ngModel)]="fithstep.lies" required>
+        <mat-radio-button name="lies" value="yes">Yes</mat-radio-button>
+        <mat-radio-button name="lies" value="yes_small">Yes Mainly Small Ones</mat-radio-button>
+        <mat-radio-button name="lies" value="no">No</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+ 
+    <div class="fc lg-rad">
+      <label for="sex" class="m">Are you less intimate with your partner or is the sex slightly different?</label>
+      <div class="fcc">
+      <mat-radio-group   id="sex" name="sex" ng-required="true" #sex="ngModel" [(ngModel)]="fithstep.sex" required>
+        <mat-radio-button name="sex" value="yes">Yes, we are going through a dry spell</mat-radio-button>
+        <mat-radio-button name="sex" value="no">No, everything has remained the same.</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc lg-rad">
+      <label for="financial" class="m">Is your partner secretive about her/his financial history? (Bank statements, credit card, etc.)</label>
+      <div class="fcc">
+      <mat-radio-group  id="financial" name="financial" ng-required="true" #financial="ngModel" [(ngModel)]="fithstep.financial" required>
+        <mat-radio-button name="financial" value="yes">Yes, I can't get access to those things</mat-radio-button>
+        <mat-radio-button name="financial" value="no">No, I have full access to everything</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+ 
+
+    <p class="tc nmb">
+      <button mat-raised-button type="button" color="primary" [disabled]="!fithStepForm.valid" (click)="goToPrevious(fithStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
+      <button mat-raised-button type="button" color="primary" [disabled]="!fithStepForm.valid" (click)="goToNext(fithStepForm)">Next  <mat-icon>chevron_right</mat-icon></button>
+    </p>
+  
+  </form>  
+
+</mat-card>
+ 
+            

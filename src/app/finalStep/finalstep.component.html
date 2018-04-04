@@ -1,0 +1,26 @@
+<mat-card>
+
+  <mat-card-title>
+      Step 7 (the last one!)
+  </mat-card-title>
+
+  <form #finalStepForm="ngForm" class="editForm" novalidate>  
+
+    <div class="fc">
+      <label for="email" class="m">Please, enter your email below to receive the answer.</label>
+       <div class="fcc">
+       <mat-form-field  class="flw">
+        <input matInput id="email" name="email" placeholder="Enter your email" [(ngModel)]="finalstep.email" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$">
+        </mat-form-field>
+        </div>
+    </div>  
+    
+     <p class="tc nmb">
+      <button mat-raised-button type="button" color="primary" [disabled]="!finalStepForm.valid" (click)="goToPrevious(finalStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
+      <button mat-raised-button type="button" color="primary" [disabled]="!finalStepForm.valid" (click)="goToNext(finalStepForm)">Done!</button>
+    </p>
+ 
+  
+  </form>  
+
+</mat-card>

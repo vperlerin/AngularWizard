@@ -1,35 +1,35 @@
 import { Component, OnInit} from '@angular/core';
 import { Router }           from '@angular/router';
 
-import { ThirdStep }        from '../data/formData.model';
+import { FourthStep }        from '../data/formData.model';
 import { FormDataService }  from '../data/formData.service';
 
 @Component ({
     selector:     'mt-wizard-personal',
-    templateUrl: './thirdstep.component.html'
+    templateUrl: './Fourthstep.component.html'
 })
 
-export class ThirdStepComponent implements OnInit {
-    thirdstep: ThirdStep;
+export class FourthStepComponent implements OnInit {
+    fourthstep: FourthStep;
     form: any; 
       
     constructor(private router: Router, private formDataService: FormDataService) {
     }
  
     ngOnInit() {
-        this.thirdstep = this.formDataService.getThirdStep();
-        console.log('Third Step loaded!'); 
+        this.fourthstep = this.formDataService.getFourthStep();
+        console.log('Fourth Step loaded!'); 
         window.scrollTo(0,0);
     }
  
     save(form: any): boolean {
-        console.log('SAVE ', this.thirdstep);
+        console.log('SAVE ', this.fourthstep);
         if (!form.valid) {
             console.log('FORM IS NOT VALID');
             return false;
         }
         console.log('FORM IS VALID');
-        this.formDataService.setThirdStep(this.thirdstep);
+        this.formDataService.setFourthStep(this.fourthstep);
         return true;
     }
 
@@ -43,7 +43,7 @@ export class ThirdStepComponent implements OnInit {
     goToNext(form: any) {
         if (this.save(form)) {
             console.log('Go to 4th');
-            this.router.navigate(['/fourthstep']);
+            this.router.navigate(['/fithstep']);
         }
     } 
 }

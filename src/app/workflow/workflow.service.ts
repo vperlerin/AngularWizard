@@ -7,7 +7,11 @@ export class WorkflowService {
     private workflow = [
         { step: STEPS.firststep, valid: false },
         { step: STEPS.secondstep, valid: false },
-        { step: STEPS.thirdstep, valid: false } 
+        { step: STEPS.thirdstep, valid: false },
+        { step: STEPS.fourthstep, valid: false },
+        { step: STEPS.fithstep, valid: false },
+        { step: STEPS.sixthstep, valid: false },
+        { step: STEPS.finalstep, valid: false }   
     ];
     
     validateStep(step: string) {
@@ -37,8 +41,10 @@ export class WorkflowService {
         var found = false;
         var valid = true;
         var redirectToStep = '';
+
         for (var i = 0; i < this.workflow.length && !found && valid; i++) {
             let item = this.workflow[i];
+
             if (item.step === step) {
                 console.log("1- getFirstInvalidStep",item);
                 found = true;
@@ -50,6 +56,7 @@ export class WorkflowService {
                 redirectToStep = item.step
             }
         }
+        
         return redirectToStep;
     }
 }
