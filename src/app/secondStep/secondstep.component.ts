@@ -37,13 +37,13 @@ export class SecondStepComponent implements OnInit {
 
     goToPrevious(form: any) {
         if (this.save(form)) {
-            this.router.navigate(['/firstStep']);
+            this.router.navigate(['/firststep']);
         }
     }
 
     goToNext(form: any) {
         if (this.save(form)) {
-            this.router.navigate(['/thirdStep']);
+            this.router.navigate(['/thirdstep']);
         }
     } 
 

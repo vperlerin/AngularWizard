@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, FirstStep, SecondStep, Personal, Address }   from './formData.model';
+import { FormData, FirstStep, SecondStep, ThirdStep  }   from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 
@@ -10,10 +10,8 @@ export class FormDataService {
     private formData: FormData = new FormData();
     private isFirstStepValid: boolean = false;
     private isSecondStepValid: boolean = false;
-
-    private isPersonalFormValid: boolean = false;
-    private isWorkFormValid: boolean = false;
-    private isAddressFormValid: boolean = false;
+    private isThirdStepValid: boolean = false 
+   
 
     constructor(private workflowService: WorkflowService) { 
     }
@@ -58,60 +56,29 @@ export class FormDataService {
         this.workflowService.validateStep(STEPS.secondstep);
     }
 
-    getPersonal(): Personal {
-        // Return the Personal data
-        var personal: Personal = {
-            fullName: this.formData.fullName,
-            gender  : this.formData.gender
+    /*************************************************
+    * THIRD STEP 
+    *************************************************/
+    getThirdStep(): ThirdStep {
+        var thirdstep: ThirdStep = {
+            appearance : this.formData.appearance,
+            distant : this.formData.distant,
+            accuse: this.formData.accuse,
+            fight: this.formData.fight
         };
-         return personal;
+        return thirdstep;     
     }
 
-    setPersonal(data: Personal) {
-        // Update the Personal data only when the Personal Form had been validated successfully
-        this.isPersonalFormValid = true;
-        this.formData.fullName  = data.fullName;
-        this.formData.gender    = data.gender;
-
-         // Validate Personal Step in Workflow
-        this.workflowService.validateStep(STEPS.personal);
+    setThirdStep(data: ThirdStep) {
+        this.isThirdStepValid = true;
+        this.formData.appearance = data.appearance;
+        this.formData.distant = data.distant;
+        this.formData.accuse = data.accuse;
+        this.formData.fight = data.fight;
+        this.workflowService.validateStep(STEPS.thirdstep);
     }
 
-    getWork() : string {
-        // Return the work type
-        return this.formData.work;
-    }
     
-    setWork(data: string) {
-        // Update the work type only when the Work Form had been validated successfully
-        this.isWorkFormValid = true;
-        this.formData.work = data;
-        // Validate Work Step in Workflow
-        this.workflowService.validateStep(STEPS.work);
-    }
-
-    getAddress() : Address {
-        // Return the Address data
-        var address: Address = {
-            street: this.formData.street,
-            city: this.formData.city,
-            state: this.formData.state,
-            zip: this.formData.zip
-        };
-        return address;
-    }
-
-    setAddress(data: Address) {
-        // Update the Address data only when the Address Form had been validated successfully
-        this.isAddressFormValid = true;
-        this.formData.street = data.street;
-        this.formData.city = data.city;
-        this.formData.state = data.state;
-        this.formData.zip = data.zip;
-        // Validate Address Step in Workflow
-        this.workflowService.validateStep(STEPS.address);
-    }
-
     getFormData(): FormData {
         // Return the entire Form Data
         return this.formData;
@@ -122,14 +89,14 @@ export class FormDataService {
         this.workflowService.resetSteps();
         // Return the form data after all this.* members had been reset
         this.formData.clear();
-        this.isFirstStepValid = this.isSecondStepValid = false;
-        //this.isPersonalFormValid = this.isWorkFormValid = this.isAddressFormValid = false;
+        this.isFirstStepValid = this.isSecondStepValid = this.isThirdStepValid = false;
         return this.formData;
     }
 
     isFormValid() {
         // Return true if all forms had been validated successfully; otherwise, return false
         return this.isFirstStepValid &&
-                this.isSecondStepValid  ;
+                this.isSecondStepValid &&
+                this.isThirdStepValid  ;
     }
-}
+} 

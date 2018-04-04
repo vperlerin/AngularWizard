@@ -10,10 +10,9 @@ import { AppComponent }       from './app.component';
 /* Feature Components */
 import { FirstStepComponent }  from './firstStep/firststep.component';
 import { SecondStepComponent }  from './secondStep/secondstep.component';
+import { ThirdStepComponent }  from './thirdStep/thirdstep.component';
 
-import { WorkComponent }      from './work/work.component';
-import { AddressComponent }   from './address/address.component';
-import { ResultComponent }    from './result/result.component';
+ 
 
 /* Routing Module */
 import { AppRoutingModule }   from './app-routing.module';
@@ -47,11 +46,8 @@ import { MatRadioModule} from '@angular/material/radio';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent,  FirstStepComponent, SecondStepComponent, WorkComponent, AddressComponent, ResultComponent ],
+    declarations: [ AppComponent,  FirstStepComponent, SecondStepComponent, ThirdStepComponent ],
     bootstrap:    [ AppComponent ]
 })
 
-export class AppModule { 
-
-
-} 
+export class AppModule {} 

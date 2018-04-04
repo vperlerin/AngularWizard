@@ -9,14 +9,13 @@ export class FormData {
     partnerFullName: string = '';
     partnerDob: string = '';
     partnerGender: string = '';
-
-    email: string = '';
-    work: string = '';
-    street: string = '';
-    city: string = '';
-    state: string = '';
-    zip: string = '';
-
+ 
+    // THIRD STEP
+    appearance: string = '';
+    distant: string = '';
+    accuse: string = '';
+    fight: string = '';
+ 
     clear() {
         // FIRST STEP
         this.fullName = ''; 
@@ -28,13 +27,12 @@ export class FormData {
         this.partnerDob = '';
         this.partnerGender = '';
 
-
-        this.email = '';
-        this.work = '';
-        this.street = '';
-        this.city = '';
-        this.state = '';
-        this.zip = '';
+        //THIRD STEP
+        this.appearance = '';
+        this.distant = '';
+        this.accuse = '';
+        this.fight = '';
+ 
     }
 }
 
@@ -50,15 +48,12 @@ export class SecondStep {
     partnerGender: string = '';
 } 
 
+export class ThirdStep {
+    appearance: string = '';
+    distant: string = '';
+    accuse: string = '';
+    fight: string = '';
+} 
 
-export class Personal {
-    fullName: string = ''; 
-    gender:  string = '';
-}
 
-export class Address {
-    street: string = '';
-    city: string = '';
-    state: string = '';
-    zip: string = '';
-}
+ 

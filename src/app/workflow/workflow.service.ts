@@ -7,9 +7,7 @@ export class WorkflowService {
     private workflow = [
         { step: STEPS.firststep, valid: false },
         { step: STEPS.secondstep, valid: false },
-        { step: STEPS.work, valid: false },
-        { step: STEPS.address, valid: false },
-        { step: STEPS.result, valid: false }
+        { step: STEPS.thirdstep, valid: false } 
     ];
     
     validateStep(step: string) {
