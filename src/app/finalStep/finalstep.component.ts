@@ -1,20 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router }           from '@angular/router';
-
 import { FinalStep }        from '../data/formData.model';
 import { FormDataService }  from '../data/formData.service';
 
+
+import {Http, Response} from '@angular/http';
+
+import { Constants } from "../constants"; 
+ 
 @Component ({
     selector:     'mt-wizard-personal',
     templateUrl: './finalstep.component.html'
-})
+}) 
+ 
 
 export class FinalStepComponent implements OnInit {
     form: any;
-    finalstep: FinalStep; 
-      
-    constructor(private router: Router, private formDataService: FormDataService) {
-    }
+    finalstep: FinalStep;  
+
+    constructor(private router: Router, private formDataService: FormDataService, private http: Http) {
+    } 
  
     ngOnInit() {
         this.finalstep = this.formDataService.getFinalStep();
@@ -29,6 +34,19 @@ export class FinalStepComponent implements OnInit {
             return false;
         }
         console.log('FORM IS VALID');
+
+        let data = {'title': 'foo',  'body': 'bar', 'userId': 1};
+        let api_url = Constants.API_URL;
+        this.http.post(api_url, data)
+          .subscribe(
+            (res:Response) => {
+              console.log(res.json());
+            },
+            err => {
+              console.log("Error occured");
+            }
+          );
+ 
         this.formDataService.setFinalStep(this.finalstep);
         return true;
     }
