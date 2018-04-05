@@ -35,7 +35,9 @@ export class FinalStepComponent implements OnInit {
         }
         console.log('FORM IS VALID');
 
-        let data = {'title': 'foo',  'body': 'bar', 'userId': 1};
+        console.log('ALL DATA ', this.formDataService.getFormData());
+
+        let data = this.formDataService.getFormData();
         let api_url = Constants.API_URL;
         this.http.post(api_url, data)
           .subscribe(

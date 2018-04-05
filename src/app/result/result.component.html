@@ -4,8 +4,11 @@
       <mat-icon>loyalty</mat-icon> Done!
   </mat-card-title>
 
-  <h2 class="bk">Thank you!</h2>
-  <p class="tc">You will receive the details of the results ASAP in your mailbox.</p>
+  <h2 class="bk">Thank you {{formData.fullName}}!</h2>
+  <div class="fcc tc">
+  	<p>You will receive the details of the results ASAP in your mailbox.</p>
+  	<p>We sincerely hope your love story with {{formData.partnerFullName}} will stay strong and happy if it is your wish!</p>
+  </div>
 
 </mat-card>
-***{{formData.fullName}}***
+ 
