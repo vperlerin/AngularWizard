@@ -1,5 +1,5 @@
-#  Multi-Step Wizard (Angular 4)
+#  Multi-Step Wizard with Angular 4, Angular Material & PHP
 
-#### [Based on](http://angular-multi-step-wizard.azurewebsites.net/)
+#### [Partially inspired by](http://angular-multi-step-wizard.azurewebsites.net/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
