@@ -1,0 +1,6 @@
+[16-Apr-2018 13:24:20 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/lenep2/public_html/TheCheatingTest/assets/php/sendEmail.php on line 25
+[16-Apr-2018 13:24:20 UTC] PHP Notice:  Undefined variable: results in /home/lenep2/public_html/TheCheatingTest/assets/php/sendEmail.php on line 32
+[16-Apr-2018 13:25:57 UTC] PHP Notice:  Undefined variable: results in /home/lenep2/public_html/TheCheatingTest/assets/php/sendEmail.php on line 33
+[16-Apr-2018 13:25:57 UTC] PHP Notice:  Undefined variable: results in /home/lenep2/public_html/TheCheatingTest/assets/php/sendEmail.php on line 33
+[16-Apr-2018 14:16:22 UTC] PHP Parse error:  syntax error, unexpected '$results' (T_VARIABLE) in /home/lenep2/public_html/TheCheatingTest/assets/php/sendEmail.php on line 56
+[16-Apr-2018 14:16:35 UTC] PHP Parse error:  syntax error, unexpected '$results' (T_VARIABLE) in /home/lenep2/public_html/TheCheatingTest/assets/php/sendEmail.php on line 56

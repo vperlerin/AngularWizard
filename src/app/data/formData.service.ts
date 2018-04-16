@@ -1,7 +1,7 @@
 import { Injectable }                        from '@angular/core';
 
 import { FormData, FirstStep, SecondStep, ThirdStep,
-         FourthStep, FithStep, SixthStep, FinalStep  }   from './formData.model';
+         FourthStep,  FinalStep  }   from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 
@@ -12,11 +12,7 @@ export class FormDataService {
     private isFirstStepValid: boolean = false;
     private isSecondStepValid: boolean = false;
     private isThirdStepValid: boolean = false;
-    private isFourthStepValid: boolean = false;
-    /*
-    private isFithStepValid: boolean = false;
-    private isSixthStepValid: boolean = false;
-    */
+    private isFourthStepValid: boolean = false; 
     private isFinalStepValid: boolean = false;
 
     constructor(private workflowService: WorkflowService) { 
@@ -123,46 +119,7 @@ export class FormDataService {
         this.workflowService.validateStep(STEPS.fourthstep);
     }    
 
-    /*************************************************
-    * FiTH STEP 
-    
-    getFithStep(): FithStep {
-        var fithstep: FithStep = {
-            
-            sex: this.formData.sex,
-            financial: this.formData.financial
-        };
-        return fithstep;     
-    }
-
-    setFithStep(data: FithStep) {
-        this.isFithStepValid = true;
-       
-        this.formData.sex = data.sex;
-        this.formData.financial = data.financial;
-        this.workflowService.validateStep(STEPS.fithstep);
-    }  
-    *************************************************/
-    /*************************************************
-    * SiXTH STEP 
-    
-    getSixthStep(): SixthStep {
-        var sixthstep: SixthStep = {
-            jaleaous: this.formData.jaleaous, 
-            goout: this.formData.goout,
-            subject: this.formData.subject
-        };
-        return sixthstep;     
-    }
-
-    setSixthStep(data: SixthStep) {
-        this.isSixthStepValid = true;
-        this.formData.jaleaous = data.jaleaous; 
-        this.formData.goout = data.goout;
-        this.formData.subject = data.subject;
-        this.workflowService.validateStep(STEPS.sixthstep);
-    }  
-    *************************************************/
+     
 
     /*************************************************
     * FINAL STEP 

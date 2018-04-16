@@ -30,15 +30,6 @@ export class FormData {
     lies: string= '';
     public: string= '';
  
-    // FITH STEP 
-     sex: string = '';
-    
-    
-    // SIXTH STEP
-    jaleaous: string = ''; 
-    goout: string = '';
-    subject: string = '';
-
     // FINAL STEP
     email: string = ''; 
  
@@ -115,16 +106,7 @@ export class FourthStep {
     public : string= '';
 } 
 
-export class FithStep {  
-    sex: string = '';
-    financial: string = '';
-} 
-
-export class SixthStep {
-    jaleaous: string = ''; 
-    goout: string = '';
-    subject: string = '';
-} 
+ 
 
 export class FinalStep {
     email: string = ''; 
