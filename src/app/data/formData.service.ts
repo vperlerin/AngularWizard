@@ -13,8 +13,10 @@ export class FormDataService {
     private isSecondStepValid: boolean = false;
     private isThirdStepValid: boolean = false;
     private isFourthStepValid: boolean = false;
+    /*
     private isFithStepValid: boolean = false;
     private isSixthStepValid: boolean = false;
+    */
     private isFinalStepValid: boolean = false;
 
     constructor(private workflowService: WorkflowService) { 
@@ -65,20 +67,28 @@ export class FormDataService {
     *************************************************/
     getThirdStep(): ThirdStep {
         var thirdstep: ThirdStep = {
-            appearance : this.formData.appearance,
-            distant : this.formData.distant,
-            accuse: this.formData.accuse,
-            fight: this.formData.fight
+            howlong: this.formData.howlong,
+            appearance: this.formData.appearance,
+            distant: this.formData.distant,
+            calls:this.formData.calls,
+            tell_lies:this.formData.tell_lies,
+            accuse:this.formData.accuse,
+            fight: this.formData.fight, 
+            financial: this.formData.financial 
         };
         return thirdstep;     
     }
 
     setThirdStep(data: ThirdStep) {
         this.isThirdStepValid = true;
-        this.formData.appearance = data.appearance;
-        this.formData.distant = data.distant;
-        this.formData.accuse = data.accuse;
-        this.formData.fight = data.fight;
+        this.formData.howlong = data.howlong;
+        this.formData.appearance= data.appearance;
+        this.formData.distant= data.distant;
+        this.formData.calls= data.calls;
+        this.formData.tell_lies= data.tell_lies;
+        this.formData.accuse= data.accuse;
+        this.formData.fight= data.fight; 
+        this.formData.financial= data.financial; 
         this.workflowService.validateStep(STEPS.thirdstep);
     }
 
@@ -87,30 +97,38 @@ export class FormDataService {
     *************************************************/
     getFourthStep(): FourthStep {
         var fourthstep: FourthStep = {
+            infidelity: this.formData.infidelity,
+            nervous: this.formData.nervous,
             privacy: this.formData.privacy,
-            cellphone: this.formData.cellphone,
-            intuition: this.formData.intuition,
+            intuition : this.formData.intuition,
             complimentary: this.formData.complimentary,
+            mood : this.formData.mood,
+            lies : this.formData.lies,
+            public : this.formData.public
         };
         return fourthstep;     
     }
 
     setFourthStep(data: FourthStep) {
         this.isFourthStepValid = true;
-        this.formData.privacy = data.privacy;
-        this.formData.cellphone = data.cellphone;
-        this.formData.intuition = data.intuition;
-        this.formData.complimentary = data.complimentary;
+        this.formData.infidelity= data.infidelity;
+        this.formData.nervous= data.nervous;
+        this.formData.privacy= data.privacy;
+        this.formData.intuition= data.intuition;
+        this.formData.complimentary= data.complimentary;
+        this.formData.mood = data.mood;
+        this.formData.lies = data.lies;
+        this.formData. public = data.public; 
+
         this.workflowService.validateStep(STEPS.fourthstep);
     }    
 
     /*************************************************
     * FiTH STEP 
-    *************************************************/
+    
     getFithStep(): FithStep {
         var fithstep: FithStep = {
-            mood: this.formData.mood,
-            lies: this.formData.lies,
+            
             sex: this.formData.sex,
             financial: this.formData.financial
         };
@@ -119,20 +137,18 @@ export class FormDataService {
 
     setFithStep(data: FithStep) {
         this.isFithStepValid = true;
-        this.formData.mood = data.mood;
-        this.formData.lies = data.lies;
+       
         this.formData.sex = data.sex;
         this.formData.financial = data.financial;
         this.workflowService.validateStep(STEPS.fithstep);
     }  
-    
+    *************************************************/
     /*************************************************
     * SiXTH STEP 
-    *************************************************/
+    
     getSixthStep(): SixthStep {
         var sixthstep: SixthStep = {
-            jaleaous: this.formData.jaleaous,
-            routine: this.formData.routine,
+            jaleaous: this.formData.jaleaous, 
             goout: this.formData.goout,
             subject: this.formData.subject
         };
@@ -141,13 +157,12 @@ export class FormDataService {
 
     setSixthStep(data: SixthStep) {
         this.isSixthStepValid = true;
-        this.formData.jaleaous = data.jaleaous;
-        this.formData.routine = data.routine;
+        this.formData.jaleaous = data.jaleaous; 
         this.formData.goout = data.goout;
         this.formData.subject = data.subject;
         this.workflowService.validateStep(STEPS.sixthstep);
     }  
-
+    *************************************************/
 
     /*************************************************
     * FINAL STEP 
@@ -178,7 +193,7 @@ export class FormDataService {
         this.workflowService.resetSteps();
         // Return the form data after all this.* members had been reset
         this.formData.clear();
-        this.isFirstStepValid = this.isSecondStepValid = this.isThirdStepValid = this.isFourthStepValid = this.isFithStepValid = this.isSixthStepValid = this.isFinalStepValid = false;
+        this.isFirstStepValid = this.isSecondStepValid = this.isThirdStepValid = this.isFourthStepValid =   this.isFinalStepValid = false;
         return this.formData;
     }
 
@@ -187,9 +202,7 @@ export class FormDataService {
         return this.isFirstStepValid &&
                this.isSecondStepValid &&
                this.isThirdStepValid &&
-               this.isFourthStepValid &&
-               this.isFithStepValid &&
-               this.isSixthStepValid &&
+               this.isFourthStepValid && 
                this.isFinalStepValid;
     }
 } 

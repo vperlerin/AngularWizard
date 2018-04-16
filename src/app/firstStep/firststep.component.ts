@@ -6,6 +6,9 @@ import { FormDataService }     from '../data/formData.service';
 
 import { MatDatepicker} from '@angular/material'; 
 import { MatDatepickerModule} from '@angular/material/datepicker'; 
+
+declare var jquery:any;
+declare var $ :any;
    
 @Component ({
     selector:     'mt-wizard-personal',
@@ -23,34 +26,28 @@ export class FirstStepComponent implements OnInit {
     ngOnInit() {
         this.firststep = this.formDataService.getFirstStep();
     }
-
+  
+    ngAfterViewInit() {
+        $('#splash').slideUp(150,function() {$('#main_as').slideDown(350);})
+    }
+     
     save(form: any): boolean {
-        console.log('SAVE ', this.firststep);
         if (!form.valid) {
-            console.log('FORM IS NOT VALID');
             return false;
         }
-        console.log('FORM IS VALID');
         this.formDataService.setFirstStep(this.firststep);
         return true;
     }
 
-    goToNext(form: any) {
-        console.log('GO TO NEXT (FIRST STEP)');
-
+    goToNext(form: any) { 
         if (this.save(form)) {
-            console.log('SAVE');
             // Navigate to the work page
             this.router.navigate(['/secondstep']);
-        } else {
-            console.log('NOT SAVE');
-        }
+        }  
     }
 
     // Open Calendar on Input Click
     _openCalendar(picker: MatDatepicker<Date>) {
         picker.open();  
     }
-
-    
 }

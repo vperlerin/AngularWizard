@@ -4,53 +4,95 @@
       Step 4
   </mat-card-title>
 
-  <form #fourthStepForm="ngForm" class="editForm" novalidate>  
+  <form #fourthStepForm="ngForm" action="" class="editForm" novalidate>  
 
+    <div class="fc lg-rad">
+      <label for="infidelity" class="m">When you bring up the subject of cheating or infidelity with your partner, ther are...
+</label>
+      <div class="fcc">
+      <mat-radio-group  id="infidelity" name="infidelity" ng-required="true" #infidelity="ngModel" [(ngModel)]="fourthstep.infidelity" required>
+        <mat-radio-button name="infidelity" value="3">highly defensive and bothered about the subject?</mat-radio-button>
+        <mat-radio-button name="infidelity" value="0">did not seem phased at all</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+
+
+    <div class="fc lg-rad">
+      <label for="nervous" class="m">Is your partner very nervous or not forth coming to share their cellphone with you?</label>
+      <div class="fcc">
+      <mat-radio-group  id="nervous" name="nervous" ng-required="true" #nervous="ngModel" [(ngModel)]="fourthstep.nervous" required>
+        <mat-radio-button name="nervous" value="5">Yes</mat-radio-button>
+        <mat-radio-button name="nervous" value="0">No</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+ 
     <div class="fc">
       <label for="privacy" class="m">Is your partner more concerned with their privacy lately?</label>
       <div class="fcc">
       <mat-radio-group  id="privacy" name="privacy" ng-required="true" #privacy="ngModel" [(ngModel)]="fourthstep.privacy" required>
-        <mat-radio-button name="privacy" value="yes">Yes</mat-radio-button>
-        <mat-radio-button name="privacy" value="no">No</mat-radio-button>
-      </mat-radio-group>
-      </div>
-    </div>
- 
-    <div class="fc lg-rad">
-      <label for="cellphone" class="m">Is your partner very nervous or not forth coming to share their cellphone with you?</label>
-      <div class="fcc">
-      <mat-radio-group  id="cellphone" name="cellphone" ng-required="true" #cellphone="ngModel" [(ngModel)]="fourthstep.cellphone" required>
-        <mat-radio-button name="cellphone" value="yes">Yes - They get very nervous when I request to see or use it</mat-radio-button>
-        <mat-radio-button name="cellphone" value="no">No - They leave it around and I can use it whenever</mat-radio-button>
-      </mat-radio-group>
-      </div>
-    </div>
- 
-    <div class="fc lg-rad">
-      <label for="intuition" class="m">What does your intuition tell you?</label>
-      <div class="fcc">
-      <mat-radio-group   id="intuition" name="intuition" ng-required="true" #intuition="ngModel" [(ngModel)]="fourthstep.intuition" required>
-        <mat-radio-button name="intuition" value="yes">My partner is Cheating</mat-radio-button>
-        <mat-radio-button name="intuition" value="no">My Partner is Not Cheating</mat-radio-button>
+        <mat-radio-button name="privacy" value="3">Yes</mat-radio-button>
+        <mat-radio-button name="privacy" value="0">No</mat-radio-button>
       </mat-radio-group>
       </div>
     </div>
 
-    <div class="fc lg-rad">
+    <div class="fc  lg-rad">
+      <label for="intuition" class="m">What does your intuition tell you?</label>
+      <div class="fcc">
+      <mat-radio-group  id="intuition" name="intuition" ng-required="true" #intuition="ngModel" [(ngModel)]="fourthstep.intuition" required>
+        <mat-radio-button name="intuition" value="5">My partner is Cheating</mat-radio-button>
+        <mat-radio-button name="intuition" value="0">My Partner is Not Cheating</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc  lg-rad">
       <label for="complimentary" class="m">Is your partner over complimentary lately?</label>
       <div class="fcc">
       <mat-radio-group  id="complimentary" name="complimentary" ng-required="true" #complimentary="ngModel" [(ngModel)]="fourthstep.complimentary" required>
-        <mat-radio-button name="complimentary" value="yes">Yes, it's way too much</mat-radio-button>
-        <mat-radio-button name="complimentary" value="no">No, it's the same as usual</mat-radio-button>
+        <mat-radio-button name="complimentary" value="3">Yes, it's way too much</mat-radio-button>
+        <mat-radio-button name="complimentary" value="0">No, it's the same as usual</mat-radio-button>
       </mat-radio-group>
       </div>
     </div>
 
-    
+    <div class="fc">
+      <label for="mood" class="m">Does your partner have unpredictable mood swings?</label>
+      <div class="fcc">
+      <mat-radio-group  id="mood" name="mood" ng-required="true" #mood="ngModel" [(ngModel)]="fourthstep.mood" required>
+        <mat-radio-button name="mood" value="3">Yes</mat-radio-button>
+        <mat-radio-button name="mood" value="0">No</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
 
+    <div class="fc">
+      <label for="lies" class="m">Have you caught your partner in any sort of lies recently?</label>
+      <div class="fcc">
+      <mat-radio-group  id="lies" name="lies" ng-required="true" #lies="ngModel" [(ngModel)]="fourthstep.lies" required>
+        <mat-radio-button name="lies" value="3">Yes</mat-radio-button>
+        <mat-radio-button name="lies" value="0">No</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc lg-rad">
+      <label for="public" class="m">Does your partner still want to go out in public with you??</label>
+      <div class="fcc">
+      <mat-radio-group  id="public" name="public" ng-required="true" #public="ngModel" [(ngModel)]="fourthstep.public" required>
+        <mat-radio-button name="public" value="0">Yes, we go out all the time</mat-radio-button>
+        <mat-radio-button name="public" value="5">We used to go out all the time but lately we don't at all</mat-radio-button>
+        <mat-radio-button name="public" value="2">We go out very little</mat-radio-button>
+      </mat-radio-group>
+      </div>
+    </div>     
+
+ 
     <p class="tc nmb">
-      <button mat-raised-button type="button" color="primary" [disabled]="!fourthStepForm.valid" (click)="goToPrevious(fourthStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
-      <button mat-raised-button type="button" color="primary" [disabled]="!fourthStepForm.valid" (click)="goToNext(fourthStepForm)">Next  <mat-icon>chevron_right</mat-icon></button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!fourthStepForm.valid" (click)="goToPrevious(fourthStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!fourthStepForm.valid" (click)="goToNext(fourthStepForm)">Next  <mat-icon>chevron_right</mat-icon></button>
     </p>
   
   </form>  

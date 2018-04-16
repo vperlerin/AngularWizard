@@ -1,10 +1,10 @@
 <mat-card>
 
   <mat-card-title>
-      Step 7 (the last one!)
+      We're done!
   </mat-card-title>
 
-  <form #finalStepForm="ngForm" class="editForm" novalidate>  
+  <form #finalStepForm="ngForm" action="" class="editForm" novalidate>  
 
     <div class="fc">
       <label for="email" class="m">Please, enter your email below to receive the answer.</label>
@@ -16,8 +16,8 @@
     </div>  
     
      <p class="tc nmb">
-      <button mat-raised-button type="button" color="primary" [disabled]="!finalStepForm.valid" (click)="goToPrevious(finalStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
-      <button mat-raised-button type="button" color="primary" [disabled]="!finalStepForm.valid" (click)="goToNext(finalStepForm)">Done!</button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!finalStepForm.valid" (click)="goToPrevious(finalStepForm)"><mat-icon>chevron_left</mat-icon>Previous</button>
+      <button mat-raised-button type="submit" color="primary" [disabled]="!finalStepForm.valid" (click)="goToNext(finalStepForm)">Done!</button>
     </p>
  
   

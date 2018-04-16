@@ -1,4 +1,4 @@
- 
+<div id="main_as" style="display: none"> 
 <div id="illustrations"> 
   <div>
     <img src="./assets/img/speed.svg" alt="Less than 10 minutes"/>
@@ -20,7 +20,7 @@
       Step 1
   </mat-card-title>
 
-  <form #firstStepForm="ngForm" class="editForm" novalidate>  
+  <form #firstStepForm="ngForm" class="editForm" novalidate action="">  
 
     <div class="fc">
       <label for="fullName" class="m">What is your Full Name?</label>
@@ -53,13 +53,10 @@
     </div>
   
     <p class="tc nmb">
-        <button mat-raised-button color="primary" [disabled]="!firstStepForm.valid" (click)="goToNext(firstStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!firstStepForm.valid" (click)="goToNext(firstStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
     </p>
   
   </form>  
 
 </mat-card>
-
-
- 
-            
+</div> 

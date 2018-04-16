@@ -4,7 +4,7 @@
       Step 2
   </mat-card-title>
 
-  <form #secondStepForm="ngForm" class="editForm" novalidate>  
+  <form #secondStepForm="ngForm" action="" class="editForm" novalidate>  
 
     <div class="fc"> 
       <label for="partnerFullName" class="m">What is the Full Name of your partner?</label>
@@ -38,8 +38,8 @@
  
 
     <p class="tc nmb">
-      <button mat-raised-button color="primary" [disabled]="!secondStepForm.valid" (click)="goToPrevious(secondStepForm)"><mat-icon>chevron_left</mat-icon>Previous  </button>
-      <button mat-raised-button color="primary"  [disabled]="!secondStepForm.valid" (click)="goToNext(secondStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
+      <button mat-raised-button color="primary"  type="submit" [disabled]="!secondStepForm.valid" (click)="goToPrevious(secondStepForm)"><mat-icon>chevron_left</mat-icon>Previous  </button>
+      <button mat-raised-button color="primary" type="submit"  [disabled]="!secondStepForm.valid" (click)="goToNext(secondStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
     </p>
   
   </form>  

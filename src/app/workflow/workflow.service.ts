@@ -9,8 +9,10 @@ export class WorkflowService {
         { step: STEPS.secondstep, valid: false },
         { step: STEPS.thirdstep, valid: false },
         { step: STEPS.fourthstep, valid: false },
+        /*
         { step: STEPS.fithstep, valid: false },
         { step: STEPS.sixthstep, valid: false },
+        */
         { step: STEPS.finalstep, valid: false }   
     ];
     

@@ -11,26 +11,31 @@ export class FormData {
     partnerGender: string = '';
  
     // THIRD STEP
+    howlong: string= '';
     appearance: string = '';
     distant: string = '';
+    calls:string = '';
+    tell_lies:string='';
     accuse: string = '';
-    fight: string = '';
-
-    // FOURTH STEP
-    privacy: string = '';
-    cellphone: string = '';
-    intuition: string = '';
-    complimentary: string = '';
- 
-    // FITH STEP
-    mood: string = '';
-    lies: string = '';
-    sex: string = '';
+    fight: string = ''; 
     financial: string = '';
+ 
+    // FOURTH STEP
+    infidelity: string= '';
+    nervous: string= '';
+    privacy: string= '';
+    intuition : string= '';
+    complimentary: string= '';
+    mood: string= '';
+    lies: string= '';
+    public: string= '';
+ 
+    // FITH STEP 
+     sex: string = '';
+    
     
     // SIXTH STEP
-    jaleaous: string = '';
-    routine: string = '';
+    jaleaous: string = ''; 
     goout: string = '';
     subject: string = '';
 
@@ -50,28 +55,25 @@ export class FormData {
         this.partnerGender = '';
 
         //THIRD STEP
+        this.howlong = '';
         this.appearance = '';
         this.distant = '';
-        this.accuse = '';
-        this.fight = '';
+        this.calls = '';
+        this.tell_lies ='';
+        this.accuse  = '';
+        this.fight  = ''; 
+        this.financial  = '';
 
         // FOURTH STEP
+        this.infidelity = '';
+        this.nervous = '';
         this.privacy = '';
-        this.cellphone = '';
         this.intuition = '';
-        this.complimentary  = '';
-        
-        // FITH STEP
-        this.mood  = '';
-        this.lies  = '';
-        this.sex  = '';
-        this.financial  = '';
-        
-        // SIXTH
-        this.jaleaous = '';
-        this.routine = '';
-        this.goout = '';
-        this.subject = '';
+        this.complimentary = '';
+        this.mood = '';
+        this.lies = '';
+        this.public = '';
+      
 
         // FINAL
         this.email = '';
@@ -92,29 +94,34 @@ export class SecondStep {
 } 
 
 export class ThirdStep {
+    howlong: string= '';
     appearance: string = '';
     distant: string = '';
+    calls:string = '';
+    tell_lies:string='';
     accuse: string = '';
-    fight: string = '';
+    fight: string = ''; 
+    financial: string = '';
 } 
 
 export class FourthStep {
-    privacy: string = '';
-    cellphone: string = '';
-    intuition: string = '';
-    complimentary: string = '';
+    infidelity: string= '';
+    nervous: string= '';
+    privacy: string= '';
+    intuition : string= '';
+    complimentary: string= '';
+    mood : string= '';
+    lies : string= '';
+    public : string= '';
 } 
 
-export class FithStep {
-    mood: string = '';
-    lies: string = '';
+export class FithStep {  
     sex: string = '';
     financial: string = '';
 } 
 
 export class SixthStep {
-    jaleaous: string = '';
-    routine: string = '';
+    jaleaous: string = ''; 
     goout: string = '';
     subject: string = '';
 } 

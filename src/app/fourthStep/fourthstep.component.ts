@@ -36,14 +36,14 @@ export class FourthStepComponent implements OnInit {
     goToPrevious(form: any) {
         if (this.save(form)) {
             console.log('Go to 2nd');
-            this.router.navigate(['/secondstep']);
+            this.router.navigate(['/thirdstep']);
         }
     }
 
     goToNext(form: any) {
         if (this.save(form)) {
-            console.log('Go to 4th');
-            this.router.navigate(['/fithstep']);
+            console.log('Go to Final Step');
+            this.router.navigate(['/finalstep']);
         }
     } 
 }

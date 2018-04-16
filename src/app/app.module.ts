@@ -12,8 +12,10 @@ import { FirstStepComponent }  from './firstStep/firststep.component';
 import { SecondStepComponent }  from './secondStep/secondstep.component';
 import { ThirdStepComponent }  from './thirdStep/thirdstep.component';
 import { FourthStepComponent }  from './fourthStep/fourthstep.component';
+/*
 import { FithStepComponent }  from './fithStep/fithstep.component';
 import { SixthStepComponent }  from './sixthStep/sixthstep.component';
+*/
 import { FinalStepComponent }  from './finalStep/finalstep.component';
 import { ResultComponent }  from './result/result.component';
 
@@ -48,7 +50,7 @@ import { MatRadioModule} from '@angular/material/radio';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent,  FirstStepComponent, SecondStepComponent, ThirdStepComponent, FourthStepComponent, FithStepComponent, SixthStepComponent, FinalStepComponent, ResultComponent ],
+    declarations: [ AppComponent,  FirstStepComponent, SecondStepComponent, ThirdStepComponent, FourthStepComponent, /* FithStepComponent, SixthStepComponent, */ FinalStepComponent, ResultComponent ],
     bootstrap:    [ AppComponent ]
 })
 
