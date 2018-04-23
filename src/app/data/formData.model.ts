@@ -19,6 +19,8 @@ export class FormData {
     accuse: string = '';
     fight: string = ''; 
     financial: string = '';
+    status:string = '';
+    whish: string = '';
  
     // FOURTH STEP
     infidelity: string= '';
@@ -54,6 +56,8 @@ export class FormData {
         this.accuse  = '';
         this.fight  = ''; 
         this.financial  = '';
+        this.status = '';
+        this.whish = '';
 
         // FOURTH STEP
         this.infidelity = '';
@@ -93,6 +97,8 @@ export class ThirdStep {
     accuse: string = '';
     fight: string = ''; 
     financial: string = '';
+    status: string = '';
+    whish: string  = '';
 } 
 
 export class FourthStep {

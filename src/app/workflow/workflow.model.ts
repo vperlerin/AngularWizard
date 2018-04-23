@@ -2,11 +2,7 @@ export const STEPS = {
 	firststep: 'firststep',
 	secondstep: 'secondstep',
 	thirdstep: 'thirdstep',
-	fourthstep: 'fourthstep', 
-	/*
-	fithstep: 'fithstep', 
-	sixthstep: 'sixthstep',
-	*/
+	fourthstep: 'fourthstep',  
 	finalstep: 'finalstep',
 	result: 'result',
 }

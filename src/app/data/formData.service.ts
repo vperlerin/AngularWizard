@@ -70,7 +70,9 @@ export class FormDataService {
             tell_lies:this.formData.tell_lies,
             accuse:this.formData.accuse,
             fight: this.formData.fight, 
-            financial: this.formData.financial 
+            financial: this.formData.financial,
+            status: this.formData.status,
+            whish: this.formData.whish
         };
         return thirdstep;     
     }
@@ -85,6 +87,8 @@ export class FormDataService {
         this.formData.accuse= data.accuse;
         this.formData.fight= data.fight; 
         this.formData.financial= data.financial; 
+        this.formData.status = data.status;
+        this.formData.whish = data.whish;
         this.workflowService.validateStep(STEPS.thirdstep);
     }
 

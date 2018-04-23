@@ -1,17 +1,12 @@
 <?php
 
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
-
-	set_include_path('/public_html/TheCheatingTest/assets/php');
-
+	// Import PHPMailer classes into the global namespace
+	// These must be at the top of your script, not inside a function
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
- 
-	require './PHPMailer/PHPMailer/Exception.php';
-	require './PHPMailer/PHPMailer/PHPMailer.php'; 
-	require './PHPMailer/PHPMailer/SMTP.php';
+
+	//Load Composer's autoloader
+	require 'vendor/autoload.php';
 
 	$postdata = file_get_contents("php://input");
 	$request  = json_decode($postdata, true);
@@ -30,8 +25,7 @@
 	
 
 		// Compute % (60pts = 100%)
-		$results = $results*100/60;
-
+		$results = number_format($results*100/60,0);
 
 		$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 		try {

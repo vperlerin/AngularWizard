@@ -4,22 +4,16 @@ import { STEPS }              from './workflow.model';
 
 @Injectable()
 export class WorkflowService {
+
     private workflow = [
         { step: STEPS.firststep, valid: false },
         { step: STEPS.secondstep, valid: false },
         { step: STEPS.thirdstep, valid: false },
         { step: STEPS.fourthstep, valid: false },
-        /*
-        { step: STEPS.fithstep, valid: false },
-        { step: STEPS.sixthstep, valid: false },
-        */
         { step: STEPS.finalstep, valid: false }   
     ];
     
-    validateStep(step: string) {
-        console.log('*****************************')
-        console.log('VALIDATE ', step);
-
+    validateStep(step: string) { 
         // If the state is found, set the valid field to true 
         var found = false;
         for (var i = 0; i < this.workflow.length && !found; i++) {

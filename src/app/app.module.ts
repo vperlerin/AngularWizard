@@ -1,7 +1,9 @@
 import { NgModule }           from '@angular/core';
-import { BrowserModule }      from '@angular/platform-browser';
+
 import { FormsModule }        from '@angular/forms';
-import { HttpModule }		  from '@angular/http';
+import { HttpModule }		  from '@angular/http'; 
+
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* App Root */
@@ -12,10 +14,6 @@ import { FirstStepComponent }  from './firstStep/firststep.component';
 import { SecondStepComponent }  from './secondStep/secondstep.component';
 import { ThirdStepComponent }  from './thirdStep/thirdstep.component';
 import { FourthStepComponent }  from './fourthStep/fourthstep.component';
-/*
-import { FithStepComponent }  from './fithStep/fithstep.component';
-import { SixthStepComponent }  from './sixthStep/sixthstep.component';
-*/
 import { FinalStepComponent }  from './finalStep/finalstep.component';
 import { ResultComponent }  from './result/result.component';
 
@@ -32,10 +30,11 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatRadioModule} from '@angular/material/radio'; 
  
 @NgModule({
-    imports:      [ BrowserModule, 
-                    FormsModule,
+    imports:      [ FormsModule,
                     AppRoutingModule,
                     HttpModule,
+
+				    BrowserModule, 
 				    BrowserAnimationsModule,
 
 				    // Material
@@ -50,8 +49,10 @@ import { MatRadioModule} from '@angular/material/radio';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent,  FirstStepComponent, SecondStepComponent, ThirdStepComponent, FourthStepComponent, /* FithStepComponent, SixthStepComponent, */ FinalStepComponent, ResultComponent ],
+    declarations: [ AppComponent,  FirstStepComponent, SecondStepComponent, ThirdStepComponent, FourthStepComponent,FinalStepComponent, ResultComponent ],
     bootstrap:    [ AppComponent ]
 })
 
-export class AppModule {} 
+export class AppModule {
+  
+} 

@@ -1,8 +1,13 @@
 import { Component, OnInit, Input }   from '@angular/core';
 import { FormDataService }            from './data/formData.service';
 
+
+import { BrowserModule } from '@angular/platform-browser'; 
+
+import { routerTransition } from './router.animations';
+
 @Component ({
-    selector:     'multi-step-wizard-app',
+    selector:     'app',
     templateUrl: './app.component.html'
 }) 
 
@@ -13,10 +18,9 @@ export class AppComponent implements OnInit {
     
     today = Date.now(); // Copyright Date
     
-    constructor(private formDataService: FormDataService) {
-        //?
-    }
+    constructor(private formDataService: FormDataService) {}
 
+   
     ngOnInit() {
         this.formData = this.formDataService.getFormData();
         console.log(this.title + ' loaded!');
