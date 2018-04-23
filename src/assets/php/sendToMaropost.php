@@ -1,7 +1,7 @@
 <?php
 
 class MP {
-	
+	require_once('.env.php');	
 
 	function request($action, $endpoint, $dataArray) {
 		$url = self::$url_api . $endpoint . ".json"; 
