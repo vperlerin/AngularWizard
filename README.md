@@ -9,9 +9,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Update the URL to the Maropost PHP File in src/app/constants.ts first 
 - Add a file .env.php under src/assets/php that contains
 ```
-  - $auth_token  = [MAROPOST auth token];
-  - $url_api 		= "http://api.maropost.com/accounts/[MAROPOST ACCOUNT ID]/";
-  - $list 			= "lists/[MAROPOST LIST ID]/contacts";
+  - $auth_token  = "[MAROPOST auth token]";
+  - $url_api = "http://api.maropost.com/accounts/[MAROPOST ACCOUNT ID]/";
+  - $list = "lists/[MAROPOST LIST ID]/contacts";
 ```
 - run ```ng build -prod```
 
