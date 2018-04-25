@@ -21,28 +21,29 @@
     <div class="fc">
       <label for="status" class="m">What is your current status?</label>
       <mat-select id="status" name="status" ng-required="true" #status="ngModel" [(ngModel)]="thirdstep.status" required placeholder="Your Relationship Status ">
-           <mat-option value="1">Single but in love</mat-option>
-           <mat-option value="0">Happily married</mat-option>
-           <mat-option value="3">Difficult mariage</mat-option>
-           <mat-option value="3">In a relationship</mat-option>
-           <mat-option value="4">Divorced</mat-option>
-           <mat-option value="2">Widowed</mat-option>
+           <mat-option value="single">Single</mat-option>
+           <mat-option value="single but in love">Single but in love</mat-option>
+           <mat-option value="happily married">Happily married</mat-option>
+           <mat-option value="difficult marriage">Difficult mariage</mat-option>
+           <mat-option value="in a relationship">In a relationship</mat-option>
+           <mat-option value="divorced">Divorced</mat-option>
+           <mat-option value="widowed">Widowed</mat-option>
       </mat-select>
     </div>
 
     <div class="fc">
       <label for="whish" class="m">What is your greatest wish?</label>
       <mat-select id="whish" name="whish" ng-required="true" #whish="ngModel" [(ngModel)]="thirdstep.whish" required placeholder="Your Greatest Whish">
-           <mat-option value="1">money</mat-option>
-           <mat-option value="0">find new love</mat-option>
-           <mat-option value="3">fix current love</mat-option>
-           <mat-option value="3">luck</mat-option>
-           <mat-option value="4">work</mat-option> 
-           <mat-option value="4">self image</mat-option>
-           <mat-option value="4">soul image</mat-option> 
+           <mat-option value="money">money</mat-option>
+           <mat-option value="find new love">find new love</mat-option>
+           <mat-option value="fix current love">fix current love</mat-option>
+           <mat-option value="luck">luck</mat-option>
+           <mat-option value="work">work</mat-option> 
+           <mat-option value="self image">self image</mat-option>
+           <mat-option value="soul image">soul image</mat-option> 
       </mat-select>
     </div>
-
+ 
 
 
     <div class="fc">

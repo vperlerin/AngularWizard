@@ -3,11 +3,6 @@ import { Router }           from '@angular/router';
 import { FinalStep }        from '../data/formData.model';
 import { FormDataService }  from '../data/formData.service';
 
-
-import {Http, Response} from '@angular/http';
-
-import { Constants } from "../constants"; 
- 
 @Component ({
     selector:     'mt-wizard-personal',
     templateUrl: './finalstep.component.html'
@@ -18,7 +13,7 @@ export class FinalStepComponent implements OnInit {
     form: any;
     finalstep: FinalStep;  
 
-    constructor(private router: Router, private formDataService: FormDataService, private http: Http) {
+    constructor(private router: Router, private formDataService: FormDataService) {
     } 
  
     ngOnInit() {
@@ -27,27 +22,8 @@ export class FinalStepComponent implements OnInit {
         window.scrollTo(0,0);
     }
   
-    save(form: any): boolean {
-        console.log('SAVE ', this.finalstep);
-        if (!form.valid) {
-            console.log('FORM IS NOT VALID');
-            return false;
-        }
-        console.log('FORM IS VALID');
-
-        console.log('ALL DATA ', this.formDataService.getFormData());
-
-        let data = this.formDataService.getFormData();
-        let api_url = Constants.API_URL;
-        this.http.post(api_url, data)
-          .subscribe(
-            (res:Response) => {
-              console.log(res.json());
-            },
-            err => {
-              console.log("Error occured");
-            }
-          );
+    save(form: any): boolean { 
+       
  
         this.formDataService.setFinalStep(this.finalstep);
         return true;

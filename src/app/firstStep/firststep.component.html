@@ -1,8 +1,8 @@
 <div id="main_as" style="display: none"> 
 <div id="illustrations"> 
   <div>
-    <img src="./assets/img/speed.svg" alt="Less than 10 minutes"/>
-    <span>Takes less than<br/>10 minutes</span>
+    <img src="./assets/img/speed.svg" alt="Less than 3 minutes"/>
+    <span>Takes less than<br/>3 minutes</span>
   </div>    
   <div>
     <img src="./assets/img/honest.svg"  alt="Be Honest"/>
@@ -31,16 +31,6 @@
       </div>
     </div>
 
-    <div class="fc">
-      <label for="gender" class="m">What is your Gender?</label>
-      <div class="fcc">
-        <mat-radio-group  id="gender" name="gender" ng-required="true" #gender="ngModel" [(ngModel)]="firststep.gender" required>
-          <mat-radio-button name="gender" value="female">Female</mat-radio-button>
-          <mat-radio-button name="gender" value="male">Male</mat-radio-button>
-        </mat-radio-group>
-      </div>
-    </div>
-
     <div class="fc"> 
       <label for="dob" class="m">What is your Birthday?</label>
       <div class="fcc">
@@ -51,6 +41,18 @@
         </mat-form-field> 
       </div>  
     </div>
+
+    <div class="fc">
+      <label for="gender" class="m">What is your Gender?</label>
+      <div class="fcc">
+        <mat-radio-group  id="gender" name="gender" ng-required="true" #gender="ngModel" [(ngModel)]="firststep.gender" required>
+          <mat-radio-button name="gender" value="female">Female</mat-radio-button>
+          <mat-radio-button name="gender" value="male">Male</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+
+    
   
     <p class="tc nmb">
         <button type="submit" mat-raised-button color="primary" [disabled]="!firstStepForm.valid" (click)="goToNext(firstStepForm)"> Next  <mat-icon>chevron_right</mat-icon></button>

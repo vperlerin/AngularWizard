@@ -130,7 +130,7 @@ export class FormDataService {
     *************************************************/
     getFinalStep(): FinalStep {
         var finalstep: FinalStep = {
-            email: this.formData.email 
+            email: this.formData.email
         };
         return finalstep;     
     }

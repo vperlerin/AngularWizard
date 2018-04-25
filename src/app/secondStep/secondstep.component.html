@@ -16,16 +16,6 @@
     </div>
 
     <div class="fc"> 
-      <label for="partnerGender" class="m">What is the Gender of your partner?</label>
-      <div class="fcc">
-          <mat-radio-group  id="partnerGender" name="partnerGender" ng-required="true" #partnerGender="ngModel" [(ngModel)]="secondstep.partnerGender" required>
-            <mat-radio-button name="partnerGender" value="female">Female</mat-radio-button>
-            <mat-radio-button name="partnerGender" value="male">Male</mat-radio-button>
-          </mat-radio-group>
-      </div>
-    </div>
-
-    <div class="fc"> 
       <label for="partnerDob" class="m">What is the Birthday  of your partner?</label>
       <div class="fcc">
           <mat-form-field class="flw">
@@ -34,6 +24,16 @@
               <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
           </mat-form-field> 
       </div>    
+    </div>
+
+    <div class="fc"> 
+      <label for="partnerGender" class="m">What is the Gender of your partner?</label>
+      <div class="fcc">
+          <mat-radio-group  id="partnerGender" name="partnerGender" ng-required="true" #partnerGender="ngModel" [(ngModel)]="secondstep.partnerGender" required>
+            <mat-radio-button name="partnerGender" value="female">Female</mat-radio-button>
+            <mat-radio-button name="partnerGender" value="male">Male</mat-radio-button>
+          </mat-radio-group>
+      </div>
     </div>
  
 
