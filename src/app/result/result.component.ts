@@ -15,7 +15,7 @@ import { Constants } from "../constants";
 })
 
 export class ResultComponent implements OnInit {
-    title = 'Thanks for staying tuned!';
+    result = '!';
     @Input() formData: FormData;
     isFormValid: boolean = false; 
     
@@ -30,9 +30,11 @@ export class ResultComponent implements OnInit {
           .subscribe(
             (res:Response) => {
               console.log(res.json());
+              //this.result = 'Ok';
             },
             err => {
               console.log("Error occured");
+              //this.result = 'Error';
             }
         );
     }

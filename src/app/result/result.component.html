@@ -1,14 +1,46 @@
 <mat-card>
 
-  <mat-card-title>
+  	<mat-card-title>
       <mat-icon>loyalty</mat-icon> Done!
-  </mat-card-title>
+  	</mat-card-title> 
+  
+  	<h2 class="bk">Thank you {{formData.fullName}}!</h2>
+  	<div class="fcc tc">
+  	 	<p><strong>Using the Results from the Survey we have computed a score on the likelihood of your partner {{formData.partnerFullName}} cheating on you. We will send you an email with an answer Shortly after one our specialists analyzes the results.</strong></p>
 
-  <h2 class="bk">Thank you {{formData.fullName}}!</h2>
-  <div class="fcc tc">
-  	<p>You will receive the details of the results ASAP in your mailbox.</p>
-  	<p>We sincerely hope your love story with {{formData.partnerFullName}} will stay strong and happy if it is your wish!</p>
-  </div>
+  	 	<hr style="margin: 2em 0" />
+  	 	
+  	 	<p>For your convenience, here are links to four of the most popular email providers below. Click the one you use to check your email now!</p>
 
+		<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+		  <div fxFlex="20%">
+		     <a target="_blank" href="http://mail.yahoo.com" id="yahoo" class="ep"><img src="./assets/img/yahoo.png" title="Yahoo email"></a>
+		  </div>
+		  <div fxFlex="20%">
+		    <a target="_blank" href="http://www.gmail.com/" id="google" class="ep"><img src="./assets/img/gmail.png" title="Google email"></a>
+		  </div>
+		  <div fxFlex="20%">
+		    <a target="_blank" href="http://mail.aol.com/" id="aol" class="ep"><img src="./assets/img/aol.png" title="AOL email"></a>
+		  </div>
+		  <div fxFlex="20%">
+		    <a target="_blank" href="http://www.outlook.com/" id="outlook" class="ep"><img src="./assets/img/outlook.png" title="Outlook email"></a>
+		  </div>
+		</div>
+
+		<p>If you don't see it in your inbox within 10 minutes, please check your "Junk" folder as your computer may have mistakenly filed it there.</p>
+		<p>If it IS in your "Junk" folder, be sure to mark it as "Not Junk" or "Not Spam", so that your email program knows to file your Free Reading into you inbox tomorrow.</p>
+		   
+		 
+  	 		
+  	 		
+  	 		
+  	 		
+  	  
+   	</div>
+
+
+   
+
+   	
 </mat-card>
- 
+

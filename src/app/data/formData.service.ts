@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, FirstStep, SecondStep, ThirdStep,
+import { FormData, FirstStep, SecondStep, SecondStepA, ThirdStep,
          FourthStep,  FinalStep  }   from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
@@ -11,6 +11,7 @@ export class FormDataService {
     private formData: FormData = new FormData();
     private isFirstStepValid: boolean = false;
     private isSecondStepValid: boolean = false;
+    private isSecondAStepValid: boolean = false;
     private isThirdStepValid: boolean = false;
     private isFourthStepValid: boolean = false; 
     private isFinalStepValid: boolean = false;
@@ -56,6 +57,37 @@ export class FormDataService {
         this.formData.partnerDob    = data.partnerDob;
         this.formData.partnerGender = data.partnerGender;
         this.workflowService.validateStep(STEPS.secondstep);
+    }
+
+
+    /*************************************************
+    * SECOND STEP  A
+    *************************************************/
+    getSecondStepA(): SecondStepA {
+        var secondstepa: SecondStepA = {
+            cellA:   this.formData.cellA,
+            absences:   this.formData.absences,
+            contacting:   this.formData.contacting,
+            talkA:   this.formData.talkA,
+            uncomfortable:  this.formData.uncomfortable,
+            jealousA:  this.formData.jealousA,
+            routineA:  this.formData.routineA,
+            intimate:  this.formData.intimate
+        };
+        return secondstepa;     
+    }
+
+    setSecondStepA(data: SecondStepA) {
+        this.isSecondAStepValid = true;
+        this.formData.cellA  = data.cellA,
+        this.formData.absences  = data.absences,
+        this.formData.contacting  = data.contacting,
+        this.formData.talkA  = data.talkA,
+        this.formData.uncomfortable  = data.uncomfortable,
+        this.formData.jealousA  = data.jealousA,
+        this.formData.routineA  = data.routineA,
+        this.formData.intimate  = data.intimate 
+        this.workflowService.validateStep(STEPS.secondstepa);
     }
 
     /*************************************************

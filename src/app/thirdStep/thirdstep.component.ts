@@ -32,7 +32,7 @@ export class ThirdStepComponent implements OnInit {
 
     goToPrevious(form: any) {
         if (this.save(form)) {
-            this.router.navigate(['/secondstep']);
+            this.router.navigate(['/secondstepa']);
         }
     }
 

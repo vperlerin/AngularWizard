@@ -1,0 +1,99 @@
+<mat-card>
+
+  <mat-card-title>
+      Step 3
+  </mat-card-title>
+
+  <form #secondStepAForm="ngForm" action="" class="editForm" novalidate>  
+
+    <div class="fc"> 
+      <label for="cellA" class="m">Does your partner avoid answering their cellphone when you are around (or has it off?)</label>
+      <div class="fcc">
+          <mat-radio-group  id="cellA" name="cellA" ng-required="true" #cellA="ngModel" [(ngModel)]="secondstepa.cellA" required>
+            <mat-radio-button name="cellA" value="3">Yes</mat-radio-button>
+            <mat-radio-button name="cellA" value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc"> 
+      <label for="absences" class="m">Is your partner frequently having unexplained absences?</label>
+      <div class="fcc">
+          <mat-radio-group  id="absences" name="absences" ng-required="true" #absences="ngModel" [(ngModel)]="secondstepa.absences" required>
+            <mat-radio-button name="absences" value="5">Yes</mat-radio-button>
+            <mat-radio-button name="absences" value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc"> 
+      <label for="contacting" class="m">Is your partner often contacting you to see where you are?</label>
+      <div class="fcc">
+          <mat-radio-group  id="contacting " name="contacting " ng-required="true" #contacting ="ngModel" [(ngModel)]="secondstepa.contacting " required>
+            <mat-radio-button name="contacting " value="3">Yes</mat-radio-button>
+            <mat-radio-button name="contacting " value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+ 
+    <div class="fc"> 
+      <label for="talkA" class="m">Does your partner avoid taking you out in public?</label>
+      <div class="fcc">
+          <mat-radio-group  id="talkA " name="talkA " ng-required="true" #talkA ="ngModel" [(ngModel)]="secondstepa.talkA " required>
+            <mat-radio-button name="talkA " value="3">Yes</mat-radio-button>
+            <mat-radio-button name="talkA " value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc"> 
+      <label for="uncomfortable" class="m">Does your partner get uncomfortable or refuses to talk about your relationships future?</label>
+      <div class="fcc">
+          <mat-radio-group  id="uncomfortable " name="uncomfortable " ng-required="true" #uncomfortable ="ngModel" [(ngModel)]="secondstepa.uncomfortable " required>
+            <mat-radio-button name="uncomfortable " value="3">Yes</mat-radio-button>
+            <mat-radio-button name="uncomfortable " value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc"> 
+      <label for="jealousA" class="m">Is your partner acting more jealous than usual?</label>
+      <div class="fcc">
+          <mat-radio-group  id="jealousA " name="jealousA " ng-required="true" #jealousA ="ngModel" [(ngModel)]="secondstepa.jealousA " required>
+            <mat-radio-button name="jealousA " value="3">Yes</mat-radio-button>
+            <mat-radio-button name="jealousA " value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc"> 
+      <label for="routineA" class="m">Has your partner's Daily routine changed at all? (any excuse to get out of the house?)</label>
+      <div class="fcc">
+          <mat-radio-group  id="routineA " name="routineA " ng-required="true" #routineA ="ngModel" [(ngModel)]="secondstepa.routineA " required>
+            <mat-radio-button name="routineA " value="3">Yes</mat-radio-button>
+            <mat-radio-button name="routineA " value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="fc"> 
+            
+      <label for="intimate" class="m">Are you less intimate with your partner?</label>
+      <div class="fcc">
+          <mat-radio-group  id="intimate" name="intimate" ng-required="true" #intimate ="ngModel" [(ngModel)]="secondstepa.intimate" required>
+            <mat-radio-button name="intimate" value="3">Yes</mat-radio-button>
+            <mat-radio-button name="intimate" value="0">No</mat-radio-button>
+          </mat-radio-group>
+      </div>
+    </div>
+
+    <p class="tc nmb">
+      <button mat-raised-button color="primary"  type="submit" [disabled]="!secondStepAForm.valid" (click)="goToPrevious(secondStepAForm)"><mat-icon>chevron_left</mat-icon>Previous  </button>
+      <button mat-raised-button color="primary" type="submit"  [disabled]="!secondStepAForm.valid" (click)="goToNext(secondStepAForm)"> Next  <mat-icon>chevron_right</mat-icon></button>
+    </p>
+  
+  </form>  
+
+</mat-card>
+ 
+            

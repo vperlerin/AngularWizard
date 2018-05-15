@@ -1,28 +1,26 @@
 import { Component, OnInit}   from '@angular/core';
 import { Router }              from '@angular/router';
 
-import { SecondStep }          from '../data/formData.model';
+import { SecondStepA }          from '../data/formData.model';
 import { FormDataService }     from '../data/formData.service';
 
-import {  MatDatepicker } from '@angular/material'; 
+import { MatDatepicker } from '@angular/material'; 
 import { MatDatepickerModule} from '@angular/material/datepicker'; 
  
 @Component ({
     selector:     'mt-wizard-personal',
-    templateUrl: './secondstep.component.html'
+    templateUrl: './secondstepa.component.html'
 })
 
-export class SecondStepComponent implements OnInit {
-    secondstep: SecondStep;
-    form: any;
-    startDate = new Date(1990, 0, 1); // Calendar
+export class SecondStepAComponent implements OnInit {
+    secondstepa: SecondStepA;
+    form: any; 
       
     constructor(private router: Router, private formDataService: FormDataService) {
     }
  
     ngOnInit() {
-        this.secondstep = this.formDataService.getSecondStep();
-        console.log('Second Step loaded!'); 
+        this.secondstepa = this.formDataService.getSecondStepA();
         window.scrollTo(0,0);
     }
 
@@ -31,7 +29,7 @@ export class SecondStepComponent implements OnInit {
         if (!form.valid) {
             return false;
         }
-        this.formDataService.setSecondStep(this.secondstep);
+        this.formDataService.setSecondStepA(this.secondstepa);
         return true;
     }
 
@@ -43,13 +41,8 @@ export class SecondStepComponent implements OnInit {
 
     goToNext(form: any) {
         if (this.save(form)) {
-            this.router.navigate(['/secondstepa']);
+            this.router.navigate(['/thirdstep']);
         }
-    } 
-
-     // Open Calendar on Input Click
-    _openCalendar(picker: MatDatepicker<Date>) {
-        picker.open();  
-    }
+    }  
 
 }

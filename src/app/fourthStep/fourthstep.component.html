@@ -1,7 +1,7 @@
 <mat-card>
 
   <mat-card-title>
-      Step 4
+      Step 5
   </mat-card-title>
 
   <form #fourthStepForm="ngForm" action="" class="editForm" novalidate>  
@@ -22,8 +22,8 @@
       <label for="nervous" class="m">Is your partner very nervous or not forth coming to share their cellphone with you?</label>
       <div class="fcc">
       <mat-radio-group  id="nervous" name="nervous" ng-required="true" #nervous="ngModel" [(ngModel)]="fourthstep.nervous" required>
-        <mat-radio-button name="nervous" value="5">Yes</mat-radio-button>
-        <mat-radio-button name="nervous" value="0">No</mat-radio-button>
+        <mat-radio-button name="nervous" value="5">Yes - They get very nervous when I request to see or use it </mat-radio-button>
+        <mat-radio-button name="nervous" value="0">No -  They leave it around and I can use it whenever </mat-radio-button>
       </mat-radio-group>
       </div>
     </div>
@@ -79,7 +79,7 @@
     </div>
 
     <div class="fc lg-rad">
-      <label for="public" class="m">Does your partner still want to go out in public with you??</label>
+      <label for="public" class="m">Does your partner still want to go out in public with you?</label>
       <div class="fcc">
       <mat-radio-group  id="public" name="public" ng-required="true" #public="ngModel" [(ngModel)]="fourthstep.public" required>
         <mat-radio-button name="public" value="0">Yes, we go out all the time</mat-radio-button>

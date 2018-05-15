@@ -54,6 +54,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @import "assets/scss/form"; 
 @import "assets/scss/buttons";  
 @import "assets/scss/illustrations"; 
+@import "assets/scss/emails"; 
+
  
 html,body {
 	margin:0;

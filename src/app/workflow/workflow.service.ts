@@ -8,6 +8,7 @@ export class WorkflowService {
     private workflow = [
         { step: STEPS.firststep, valid: false },
         { step: STEPS.secondstep, valid: false },
+        { step: STEPS.secondstepa, valid: false },
         { step: STEPS.thirdstep, valid: false },
         { step: STEPS.fourthstep, valid: false },
         { step: STEPS.finalstep, valid: false }   

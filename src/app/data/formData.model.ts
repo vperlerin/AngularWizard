@@ -9,6 +9,16 @@ export class FormData {
     partnerFullName: string = '';
     partnerDob: string = '';
     partnerGender: string = '';
+
+    // SECOND STEP A
+    cellA: string = '';
+    absences: string = '';
+    contacting: string = '';
+    talkA: string = '';
+    uncomfortable: string = '';
+    jealousA: string = '';
+    routineA: string = '';
+    intimate: string = '';
  
     // THIRD STEP
     howlong: string= '';
@@ -46,6 +56,16 @@ export class FormData {
         this.partnerFullName = '';
         this.partnerDob = '';
         this.partnerGender = '';
+
+        // SECOND STEP A
+        this.cellA= '';
+        this.absences= '';
+        this.contacting= '';
+        this.talkA= '';
+        this.uncomfortable= '';
+        this.jealousA= '';
+        this.routineA= '';
+        this.intimate= '';
 
         //THIRD STEP
         this.howlong = '';
@@ -87,6 +107,17 @@ export class SecondStep {
     partnerDob:  string = ''; 
     partnerGender: string = '';
 } 
+
+export class SecondStepA {
+    cellA: string = '';
+    absences: string = '';
+    contacting: string = '';
+    talkA: string = '';
+    uncomfortable: string = '';
+    jealousA: string = '';
+    routineA: string = '';
+    intimate: string = '';
+}
 
 export class ThirdStep {
     howlong: string= '';

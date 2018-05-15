@@ -53,6 +53,8 @@ header('Access-Control-Allow-Headers: X-Requested-With, content-type, access-con
  
 $results = 0; 
 if(!empty($request)):
+
+	// Compute results based on numerical values
 	foreach($request as $k=>$val):
 		if(is_numeric($val)):
 			$results += intval($val);
@@ -60,10 +62,18 @@ if(!empty($request)):
 	endforeach;
 
 	$to_post = array();
+
 	// Compute % (58pts = 100%)
-	$to_post['custom_field']['cheating_results'] = number_format($results*100/58,0);
- 
-	// We clean the data
+	$to_post['custom_field']['cheating_results'] = number_format($results*100/78,0);
+
+	// Main Result
+	if($to_post['custom_field']['cheating_results']>45):
+		$to_post['custom_field']['partner_cheating'] = 'Yes';
+	else:
+		$to_post['custom_field']['partner_cheating'] = 'No';
+	endif;
+
+	// We clean the data before posting to API
 	if(!empty($request['fullName'])):
 		$tmp = explode(' ',$request['fullName']);
 		$to_post['first_name'] = filter_var($tmp[0], FILTER_SANITIZE_STRING);
@@ -75,8 +85,8 @@ if(!empty($request)):
 		unset($tmp);
 	endif;
 
-	$to_post['email'] 		= filter_var($request['email'], FILTER_SANITIZE_EMAIL);
-	$to_post['custom_field']['sex'] 		= filter_var($request['gender'], FILTER_SANITIZE_STRING);
+	$to_post['email'] = filter_var($request['email'], FILTER_SANITIZE_EMAIL);
+	$to_post['custom_field']['sex'] = filter_var($request['gender'], FILTER_SANITIZE_STRING);
 
 	if(!empty($request['dob'])):
 		$to_post['custom_field']['birthday'] = date_format(date_create($request['dob']),"Y-m-d");
@@ -93,24 +103,29 @@ if(!empty($request)):
 		unset($tmp);
 	endif;
 
-	$to_post['custom_field']['partner_gender'] 		= filter_var($request['partnerGender'], FILTER_SANITIZE_STRING);
+	$to_post['custom_field']['partner_gender'] = filter_var($request['partnerGender'], FILTER_SANITIZE_STRING);
 	if(!empty($request['partnerDob'])):
-		$to_post['custom_field']['partner_birthday'] 	= date_format(date_create($request['partnerDob']),"Y-m-d");
+		$to_post['custom_field']['partner_birthday'] = date_format(date_create($request['partnerDob']),"Y-m-d");
 	endif;
 
 	if(!empty($request['status'])):
-		$to_post['custom_field']['relationship_status'] 	= filter_var($request['status'], FILTER_SANITIZE_STRING);
+		$to_post['custom_field']['relationship_status'] = filter_var($request['status'], FILTER_SANITIZE_STRING);
 	endif;
 
 	if(!empty($request['whish'])):
-		$to_post['custom_field']['greatest_wish'] 	= filter_var($request['whish'], FILTER_SANITIZE_STRING);
+		$to_post['custom_field']['greatest_wish'] = filter_var($request['whish'], FILTER_SANITIZE_STRING);
 	endif;
   
 	// Add new contact to Maropost: 
-	 $newcontact = request($url_api, $auth_token,'POST',$list,$to_post);
-	var_dump($newcontact);
+	$newcontact = request($url_api, $auth_token,'POST',$list,$to_post);
+	// var_dump($newcontact);
  	
  	echo json_encode($newcontact);
-	 
+
+ 	// The answer has to have an id (id: 742346448)
+ 	// otherwiser, an error happened
+
+ 	// ex error email
+ 	// {email: Array(1) 0: "address is marked as spam trap" 
 endif;
 ?>
